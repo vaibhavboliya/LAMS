@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('preventBackHistory');
 
 Auth::routes();
 
@@ -37,5 +37,5 @@ Route::get('/home', function () {
 Route::get('/home/teacher', [App\Http\Controllers\HomeController::class, 'index'])->name('home.teacher');
 Route::get('/home/student', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('preventBackHistory');;
+Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('preventBackHistory');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="C3E3lEwI55vDUQApvDuUORaGWKcjcNyfNiiCM5Jg">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Registeration Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -13,11 +15,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
         var ok;
     </script>
+    <style>
+        .center {
+            margin: auto;
+            width: 90%;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body class="body">
 <div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">LAMS</a>
+        <a href="/StudentRegister" class="navbar-brand">LAMS</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,56 +35,23 @@
                 <li class="navbar-text text-light">Registeration Form</li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-text text-light">Already Registered ? <a class="link text-light" href="/">Click Here</a></li>
+                <li class="nav-text text-light"><a class="link text-light" href="/logout">Logout</a></li>
             </ul>
         </div>
     </nav>
 </div>
-@if($errors->any())
-
-        <div class="alert alert-danger" role="alert">
-            @foreach ($errors as $error)
-                @if($error == 12345)
-                    <li>There is a problem in Roll No.</li>
-                @endif
-                @if($error == 23456)
-                    <li>There is a problem in First Name</li>
-                @endif
-                @if($error == 34567)
-                    <li>There is a problem in Middle Name</li>
-                @endif
-                @if($error == 45678)
-                    <li>There is a problem in Last Name</li>
-                @endif
-                @if($error == 56789)
-                    <li>There is a problem with Email Pls use VES official email</li>
-                @endif
-                @if($error == 67891)
-                    <li>There is a problem with your phone number Pls check</li>
-                @endif
-                @if($error == 78912)
-                    <li>There is a problem with your phone number Pls check</li>
-                @endif
-            @endforeach
-        </div>
-
-@endif
-<div class="information">
-    <h2 class="text-dark">Student Entry</h2><br>
+<div class="information center">
+    <h2 class="text-dark">Student Entry Form</h2><br>
     <p id="cb">
         <em>Please agree to the <span class="text-danger">accuracy </span> of the information in this form. </em>
-    </p>
-    <p id="pass">
-        <em>Please enter <span class="text-danger">consistent</span> passwords. </em>
     </p>
     <p id="fill">
         <em>Please <span class="text-danger">fill</span> all the information in this form. </em>
     </p>
 </div>
-<div class="containerform">
+<div class="center">
     <form action="/status" class="regform" method="POST">
-        @csrf
-        <div class="form-row">
+        <input type="hidden" name="_token" value="C3E3lEwI55vDUQApvDuUORaGWKcjcNyfNiiCM5Jg">        <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="Enrollment_Number">Enrollment_Number<span class="text-danger">*</span></label>
                 <input name="EnrollmentNumber" type="text" class="form-control" placeholder="Enrollment Number">
@@ -84,6 +60,8 @@
                 <label for="first_name">First Name<span class="text-danger">*</span></label>
                 <input name="firstName" type="text" class="form-control" placeholder="Your Name">
             </div>
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="middle_name">Middle Name<span class="text-danger">*</span></label>
                 <input name="middleName" type="text" class="form-control" placeholder="Your Middle Name">
@@ -96,12 +74,14 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="email">Email<span class="text-danger">*</span></label>
-                <input name="email1" type="email" class="form-control" placeholder="year.first_name.last_name@ves.ac.in">
+                <input name="email1" type="email" class="form-control" value={{Auth::user()->email}} disabled placeholder="year.first_name.last_name@ves.ac.in">
             </div>
             <div class="form-group col-md-3">
                 <label for="phone_number_student">Parent's Email<span class="text-danger">*</span></label>
                 <input name="email2" type="email" class="form-control" placeholder="example@gmail.com">
             </div>
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="phone_number_student">Student's Phone Number<span class="text-danger">*</span></label>
                 <input name="studentPhone" type="number" class="form-control" placeholder="xxxxxxxxxx">
@@ -125,15 +105,6 @@
             <div class="form-group col-md-3">
                 <label for="roll_no.">Roll Number<span class="text-danger">*</span></label>
                 <input name="rollNo" type="number" class="form-control" placeholder="Eg. 18">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="password">Password<span class="text-danger">*</span></label>
-                <input name="new-passoword" type="password" class="form-control" placeholder="Enter your password" id="password">
-            </div>
-            <div class="form-group col-md-3">
-                <label class="passwordstatus" for="dispalying_password"></label>
-                <label for="repassword">Confirm Password<span class="text-danger">*</span></label>
-                <input name="repassword" type="password" class="form-control" placeholder="re-enter your password" id="repassword">
             </div>
         </div>
         <div class="form-group">
@@ -159,14 +130,7 @@
         } else {
             $("#cb").hide(250);
         }
-        if ($("#password").val() != $("#repassword").val()) {
-            $("#pass").show(250);
-            ok = false;
-        } else {
-            $("#pass").hide(250);
-        }
-
-        if ($("input[type=text]").val() == "" || $("input[type=number]").val() == "" || $("input[type=email]").val() == "" || $("input[type=password]").val() == "") {
+        if ($("input[type=text]").val() == "" || $("input[type=number]").val() == "" || $("input[type=email]").val() == "") {
             $("#fill").show(250);
             ok = false;
         } else {
@@ -176,15 +140,7 @@
         if (ok) {
             $(".regform").submit();
         }
-        /* else{
-             $(".regform").submit(false);
-             console.log($(".regform").attr("onsubmit"));
-         }*/
-
     });
-    // TODO: Form Validation.
-    // Check if password1 matches password2 also include strength of password
-    // Submit form only when the checkbox is selected
 </script>
 </body>
 
