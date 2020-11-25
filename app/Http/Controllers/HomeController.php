@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -19,10 +21,20 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return string
      */
     public function index()
     {
-        return view('home');
+        $email = Auth::user()->email;
+        $count = DB::table('student')->where('Email','=',$email)->get()->count();
+        if ($count == 0)
+        {
+            //return view('student_registeration');
+            return redirect()->route('StudentRegisteration');
+        }
+        else
+        {
+            echo "You are good to go";
+        }
     }
 }
