@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('preventBackHistory');
+})->middleware('auth');
 
 Auth::routes(['verify' => true]);
 
@@ -37,5 +37,8 @@ Route::get('/home', function () {
 Route::get('/home/teacher', [App\Http\Controllers\HomeController::class, 'index'])->name('home.teacher')->middleware('verified');
 Route::get('/home/student', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('preventBackHistory','verified');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('revalidate');;
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('revalidate');;
+Route::post('/status','App\Http\Controllers\Regcontrol@reg')->middleware('auth')->middleware('revalidate');;
+Route::get('/Dashboard','App\Http\Controllers\StudentDashboard@attendance')->name('Dashboard')->middleware('auth')->middleware('revalidate');;
+Route::get('/StudentDashboard',function(){return view('DashboardStudent');})->name('studentdashboard')->middleware('auth')->middleware('revalidate');

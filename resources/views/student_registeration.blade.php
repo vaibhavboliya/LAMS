@@ -3,6 +3,8 @@
 <html lang="en">
 
 <head>
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Expires" CONTENT="-1">
     <meta charset="utf-8">
     <meta name="csrf-token" content="C3E3lEwI55vDUQApvDuUORaGWKcjcNyfNiiCM5Jg">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,7 +53,8 @@
 </div>
 <div class="center">
     <form action="/status" class="regform" method="POST">
-        <input type="hidden" name="_token" value="C3E3lEwI55vDUQApvDuUORaGWKcjcNyfNiiCM5Jg">        <div class="form-row">
+        @csrf
+        <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="Enrollment_Number">Enrollment_Number<span class="text-danger">*</span></label>
                 <input name="EnrollmentNumber" type="text" class="form-control" placeholder="Enrollment Number">
@@ -121,6 +124,7 @@
     <button class="btn btn-outline-danger">Submit</button>
 </div>
 <script type="text/javascript">
+    // Response.Cache.SetCacheability(HttpCacheability.NoCache);
     $(".btn").click(function() {
         ok = true;
         console.log(ok);

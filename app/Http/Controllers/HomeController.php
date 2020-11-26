@@ -15,7 +15,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('preventBackHistory');
         $this->middleware('auth');
+        $this->middleware('revalidate');
     }
 
     /**
@@ -34,7 +36,7 @@ class HomeController extends Controller
         }
         else
         {
-            echo "You are good to go";
+            return redirect()->route('Dashboard');
         }
     }
 }
