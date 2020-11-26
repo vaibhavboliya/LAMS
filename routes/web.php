@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('preventBackHistory');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', function () {
     switch(\Illuminate\Support\Facades\Auth::user()->is_teacher){
@@ -34,8 +34,8 @@ Route::get('/home', function () {
     }
 });
 //Route::get('/Dashboard',function(){return view('student_registeration');});
-Route::get('/home/teacher', [App\Http\Controllers\HomeController::class, 'index'])->name('home.teacher');
-Route::get('/home/student', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/teacher', [App\Http\Controllers\HomeController::class, 'index'])->name('home.teacher')->middleware('verified');
+Route::get('/home/student', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('preventBackHistory');
+Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('preventBackHistory','verified');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
