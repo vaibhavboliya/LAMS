@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Contracts\Session\Session as SessionAlias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -54,15 +56,15 @@ class StudentDashboard extends Controller
                 $attended_count = 0;
                 foreach($lectures as $lect)
                     {
+                        $total_count++;
                          $l=$lect->attended_rno;
                          if(strpos($l,(string)$student_details[0]))
                          {
-                             $total_count++;
                              $attended_count++;
                          }
                     }
                 $attended_lecture["total_count"] = $total_count;
-                $attended_lecture["attended_count"] = $total_count;
+                $attended_lecture["attended_count"] = $attended_count;
                 $teacher_id = DB::table('teaches')->select('teacher_id')->where('teaches_id','=',$data)->get();
                 foreach ($teacher_id as $tid)
                 {
@@ -104,6 +106,8 @@ class StudentDashboard extends Controller
 //        }
 //        echo "\n";
 //        echo "\n";
-    return redirect()->route('studentdashboard')->with( ['values' => $attended_lectures]);
+////return $attended_lectures;
+    //return $attended_lectures;
+    return redirect()->route('studentdashboard')->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
     }
 }

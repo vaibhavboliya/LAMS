@@ -1,12 +1,20 @@
 .topcontainer {
+    box-shadow: inset 16px 16px 32px #008a91, inset -16px -16px 32px #00d0d9;
+
   text-align: center;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 40px;
   background-color: #00adb5;
 }
 .bold {
   font-weight: bold;
+}
+.overall {
+
+    justify-content: space-between;
+    display: flex;
+    position: relative;
 }
 .title {
   display: flex;
@@ -20,10 +28,10 @@
   justify-content: center;
 }
 .subject {
+    position: relative;
   margin: 30px;
   padding: 30px;
   border-radius: 5px;
-  display: flexbox;
   background-color: #fff;
   border-radius: 50px;
   background: #00adb5;
@@ -50,12 +58,12 @@ Subject_img {
   /* padding-bottom: 30px; */
 }
 .totalCard {
+    align-self: center;
   background-color: white;
   text-align: center;
-  display: flexbox;
   justify-content: center;
   align-items: center;
-  margin: 0 20px 0 20px;
+  margin: 0 50px 0 50px;
   padding: 15px;
   height: 150px;
   border-radius: 20px;

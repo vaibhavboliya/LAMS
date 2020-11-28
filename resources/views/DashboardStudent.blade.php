@@ -23,10 +23,10 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">Dashboard</a>
+                    <a href="/StudentDashboard" class="nav-link active">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Profile</a>
+                    <a href="/notexists" class="nav-link">Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
@@ -36,28 +36,31 @@
     </nav>
 </div>
 <div class="subject">
-  <div class="overall row">
+  <div class="row">
     <div class="col-1.5 bold title">
       SUMMARY
     </div>
-    <div class=" totalCard col-3 bold">
+      <br>
+    <div class="totalCard col-sm bold">
       <div>
-      <span class="count">60</span>
+      <span class="total_count" id="tc"></span>
     </div>
     <div>
       Total Lectures
     </div>
     </div>
-    <div class=" totalCard col-3 bold">
+      <br>
+    <div class=" totalCard col-sm bold">
       <div>
-      <span class="count">45</span>
+      <span class="attended_count" id="ac"></span>
     </div>
     <div>
       Attend
     </div>
     </div>
-    <div class=" totalCard col-3">
-    <div class="circle_percent" data-percent="75">
+      <br>
+    <div class=" totalCard col-sm">
+    <div class="circle_percent" id="percent" data-percent="">
       <div class="circle_inner">
           <div class="round_per"></div>
         </div>
@@ -66,65 +69,163 @@
 </div>
 </div>
 </div>
-
-  <div class="fluid-container topcontainer">
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="image-container">
-          <img class="Subject_img" width="100px" src="https://www.flaticon.com/svg/static/icons/svg/2165/2165703.svg" alt="Subject_img">
+@for ($i = 0; $i < Session::get('count'); $i++)
+    <div class="fluid-container topcontainer" id={{$i}}>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="image-container">
+                    <img class="Subject_img" width="100px" src="https://www.flaticon.com/svg/static/icons/svg/2165/2165703.svg" alt="Subject_img">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="details-container">
+                    <h3 class="subject_names" id={{"subject_name".$i}}></h3>
+                    <h5 class="faculty_names"id={{"faculty_name".$i}}></h5>
+                    <a id={{"faculty_email".$i}} class="text-dark" href=""></a>
+                    <h5 class="attended_lectures"id={{"attended_lectures".$i}}></h5>
+                    <h5 class="total_lectures"id={{"total_lectures".$i}}></h5>
+                    <h6 class="Status" id={{"status".$i}}></h6>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="previous-four-records table-responsive-sm">
+                    <table class="table table-striped">
+                        <thead>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">status</th>
+                        </thead>
+                        <tbody>
+                        <tr class="table-success">
+                            <td>24/09/2020</td>
+                            <td>1:00 pm</td>
+                            <td>Present</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td>23/09/2020</td>
+                            <td>12:00 pm</td>
+                            <td>Absent</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td>22/09/2020</td>
+                            <td>2:00 pm</td>
+                            <td>Present</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td>21/09/2020</td>
+                            <td>3:00 pm</td>
+                            <td>Absent</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                    <div class=" totalCard col-sm">
+                        <div class="circle_percent" id={{"percent".$i}} data-percent="">
+                            <div class="circle_inner">
+                                <div class="round_per"></div>
+                            </div>
+                        </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="details-container">
-          <h3 class="subject_names">Database Management System</h3>
-          <h5 class="faculty_names"><a class="text-dark" href="mailto:sunita.sahu@ves.ac.in">Faculty Name : Sunita Sahu</a></h5>
-            <h6 class="Status">Status : On Track</h6>
-        </div>
-      </div>
-       <div class="col-sm-3">
-        <div class="previous-four-records table-responsive-sm">
-          <table class="table table-striped">
-            <thead>
-              <th scope="col">Date</th>
-              <th scope="col">Time</th>
-              <th scope="col">status</th>
-            </thead>
-            <tbody>
-              <tr class="table-success">
-                <td>24/09/2020</td>
-                <td>1:00 pm</td>
-                <td>Present</td>
-              </tr>
-              <tr class="table-danger">
-                <td>23/09/2020</td>
-                <td>12:00 pm</td>
-                <td>Absent</td>
-              </tr>
-              <tr class="table-success">
-                <td>22/09/2020</td>
-                <td>2:00 pm</td>
-                <td>Present</td>
-              </tr>
-              <tr class="table-danger">
-                <td>21/09/2020</td>
-                <td>3:00 pm</td>
-                <td>Absent</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-sm-3 percentage-container">
-        <div class="percentage">
-          <h3 class="h3">78%</h3>
-        </div>
-      </div>
     </div>
-  </div>
-  <script src="/js/main.js"></script>
+    </div>
+@endfor
+<script>
+    var values = {!! json_encode(Session::get('values'), JSON_HEX_TAG) !!}
+    function onLoad()
+        {
+            var i =0;
+            var total_lectures = 0;
+            var attended_lectures = 0;
+            console.log(values);
+            for(i=0;i<values.length;i++)
+            {
+                total_lectures = total_lectures + values[i]["total_count"];
+                attended_lectures = attended_lectures + values[i]["attended_count"]
+            }
+            for(i=0;i<values.length;i++) {
+                document.getElementById("subject_name" + i.toString()).innerHTML = values[i]["subject_name"];
+                document.getElementById("faculty_name" + i.toString()).innerHTML = "Faculty Name : " + values[i]["faculty_name"];
+                document.getElementById("faculty_email" + i.toString()).innerHTML = values[i]["faculty_email"];
+                document.getElementById("faculty_email" + i.toString()).setAttribute('href',"mailto:"+values[i]["faculty_email"].toString());
+                document.getElementById("attended_lectures" + i.toString()).innerHTML = "Attended Lectures : "+values[i]["attended_count"];
+                document.getElementById("total_lectures" + i.toString()).innerHTML = "Total Lectures : "+values[i]["total_count"];
+                var precent_val = 0;
+                if (values[i]["total_count"]!=0)
+                {
+                    percent_val = parseInt((values[i]["attended_count"]/values[i]["total_count"])*100);
+                }
+                if (percent_val > 75)
+                {
+                    document.getElementById("status"+ i.toString()).innerHTML = "status : On Track";
+                }
+                else if(percent_val > 60)
+                {
+                    document.getElementById("status"+ i.toString()).innerHTML = "status : Average";
+                }
+                else
+                {
+                    document.getElementById("status"+ i.toString()).innerHTML = "status : Poor ";
+                }
+                document.getElementById("percent"+ i.toString()).setAttribute("data-percent",percent_val.toString());
+            }
+            document.getElementById("tc").innerHTML = total_lectures;
+            document.getElementById("ac").innerHTML = attended_lectures;
+            var percent = parseInt((attended_lectures/total_lectures)*100);
+            var elementVar = document.getElementById("percent");
+            elementVar.setAttribute("data-percent",percent);
+            $(".count").each(function () {
+                $(this)
+                    .prop("Counter", 0)
+                    .animate(
+                        {
+                            Counter: $(this).text(),
+                        },
+                        {
+                            duration: 2000,
+                            easing: "swing",
+                            step: function (now) {
+                                $(this).text(Math.ceil(now));
+                            },
+                        }
+                    );
+            });
+
+// percentage
+
+            $(".circle_percent").each(function () {
+                var $this = $(this),
+                    $dataV = $this.data("percent"),
+                    $dataDeg = $dataV * 3.6,
+                    $round = $this.find(".round_per");
+                $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+                $this.append(
+                    '<div class="circle_inbox"><span class="percent_text"></span></div>'
+                );
+                $this.prop("Counter", 0).animate(
+                    { Counter: $dataV },
+                    {
+                        duration: 2000,
+                        easing: "swing",
+                        step: function (now) {
+                            $this.find(".percent_text").text(Math.ceil(now) + "%");
+                        },
+                    }
+                );
+                if ($dataV >= 51) {
+                    $round.css("transform", "rotate(" + 360 + "deg)");
+                    setTimeout(function () {
+                        $this.addClass("percent_more");
+                    }, 1000);
+                    setTimeout(function () {
+                        $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+                    }, 1000);
+                }
+            });
+
+        }
+    onLoad();
+</script>
 </body>
 </html>
-<script>
-        var values = {!! json_encode(Session::get('values'), JSON_HEX_TAG) !!}
-        console.log(values);
-</script>
+{{--<script src="/js/main.js"></script>--}}
