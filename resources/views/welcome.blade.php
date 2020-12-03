@@ -28,24 +28,16 @@
     </style>
     <body style="background-color:#4a5568 ; color:#edf2f7">
         <div>
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a  class="text-light" href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
         </div>
         <div class="text-center">
             <br><br><br><br><br><br><br><br><br>
             <h1>Leave and Attendance Management System</h1>
-            <button type="button" id="home" class="btn btn-primary">Home</button>
+            @auth
+                <a style="border: none; outline: none;" href={{route('Dashboard')}}><button type="button" id="home" class="btn btn-primary">Dashboard</button></a>
+                <a style="border: none; outline: none; margin-left: 2rem;" href={{route('logout')}}><button type="button" id="home" class="btn btn-primary">Logout</button></a>
+            @else
+                <a style="border: none; outline: none;" href={{route('login')}}><button type="button" id="home" class="btn btn-primary">Login/Register</button></a>
+            @endauth
         </div>
     </body>
 </html>
