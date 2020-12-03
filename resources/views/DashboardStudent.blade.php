@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="image-container">
-                    <img class="Subject_img" width="100px" src="https://www.flaticon.com/svg/static/icons/svg/2165/2165703.svg" alt="Subject_img">
+                    <img class="Subject_img" width="100px" src="/images/{{$values[$i]['subject_name']}}.png" alt="Subject_img">
                 </div>
             </div>
             <div class="col-sm-3">
