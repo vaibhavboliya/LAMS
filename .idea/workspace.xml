@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student dashboard" />
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student dashboard">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +186,7 @@
       <workItem from="1606391981893" duration="1122000" />
       <workItem from="1606393599500" duration="19601000" />
       <workItem from="1606548922211" duration="42000" />
+      <workItem from="1606983237684" duration="870000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1606331265423</created>
