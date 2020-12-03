@@ -41,4 +41,4 @@ Route::get('/StudentRegister',function(){return view('student_registeration');})
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('revalidate');;
 Route::post('/status','App\Http\Controllers\Regcontrol@reg')->middleware('auth')->middleware('revalidate');;
 Route::get('/Dashboard','App\Http\Controllers\StudentDashboard@attendance')->name('Dashboard')->middleware('auth')->middleware('revalidate');;
-Route::get('/StudentDashboard',function(){return view('DashboardStudent');})->name('studentdashboard')->middleware('auth')->middleware('revalidate');
+//Route::get('/StudentDashboard',function(){return view('DashboardStudent');})->name('studentdashboard')->middleware('auth')->middleware('revalidate');

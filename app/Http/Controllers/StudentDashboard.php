@@ -108,6 +108,14 @@ class StudentDashboard extends Controller
 //        echo "\n";
 ////return $attended_lectures;
     //return $attended_lectures;
-    return redirect()->route('studentdashboard')->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
+        $count_a = 0;
+        $count_t = 0;
+        foreach ($attended_lectures as $data)
+        {
+            $count_a = $count_a + $data['attended_count'];
+            $count_t = $count_t + $data['total_count'];
+        }
+
+    return View('DashboardStudent')->with( ['count_t' => $count_t])->with( ['count_a' => $count_a])->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
     }
 }

@@ -23,7 +23,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a href="/StudentDashboard" class="nav-link active">Dashboard</a>
+                    <a href={{route('Dashboard')}} class="nav-link active">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="/notexists" class="nav-link">Profile</a>
@@ -43,7 +43,7 @@
       <br>
     <div class="totalCard col-sm bold">
       <div>
-      <span class="total_count" id="tc"></span>
+      <span class="total_count" id="tc">{{$count_t}}</span>
     </div>
     <div>
       Total Lectures
@@ -52,7 +52,9 @@
       <br>
     <div class=" totalCard col-sm bold">
       <div>
-      <span class="attended_count" id="ac"></span>
+      <span class="attended_count" id="ac">
+          {{$count_a}}
+    </span>
     </div>
     <div>
       Attend
@@ -60,7 +62,7 @@
     </div>
       <br>
     <div class=" totalCard col-sm">
-    <div class="circle_percent" id="percent" data-percent="">
+    <div class="circle_percent" id="percent" data-percent={{($count_a/$count_t)*100}}>
       <div class="circle_inner">
           <div class="round_per"></div>
         </div>
@@ -69,7 +71,7 @@
 </div>
 </div>
 </div>
-@for ($i = 0; $i < Session::get('count'); $i++)
+@for ($i = 0; $i < $count; $i++)
     <div class="fluid-container topcontainer" id={{$i}}>
         <div class="row">
             <div class="col-sm-3">
@@ -79,12 +81,18 @@
             </div>
             <div class="col-sm-3">
                 <div class="details-container">
-                    <h3 class="subject_names" id={{"subject_name".$i}}></h3>
-                    <h5 class="faculty_names"id={{"faculty_name".$i}}></h5>
-                    <a id={{"faculty_email".$i}} class="text-dark" href=""></a>
-                    <h5 class="attended_lectures"id={{"attended_lectures".$i}}></h5>
-                    <h5 class="total_lectures"id={{"total_lectures".$i}}></h5>
-                    <h6 class="Status" id={{"status".$i}}></h6>
+                    <h3 class="subject_names" id={{"subject_name".$i}}>{{$values[$i]['subject_name']}}</h3>
+                    <h5 class="faculty_names" id={{"faculty_name".$i}}>{{$values[$i]['faculty_name']}}</h5>
+                    <a id={{"faculty_email".$i}} class="text-dark" href="">{{$values[$i]['faculty_email']}}</a>
+                    <h5 class="attended_lectures" id={{"attended_lectures".$i}}>Number of Lectures Attended : {{$values[$i]['attended_count']}}</h5>
+                    <h5 class="total_lectures" id={{"total_lectures".$i}}><span>Total Number of Lectures : </span><span>{{$values[$i]['total_count']}}</span></h5>
+                    <h6 class="Status" id={{"status".$i}}>
+                        @if(($values[$i]['attended_count']/$values[$i]['total_count'])*100 < 60)
+                            <h2><span class='text-danger'>{{"Poor"}}</span></h2>
+                        @else
+                            <h2><span class='text-primary'>{{"Good"}}</span></h2>
+                        @endif
+                    </h6>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -121,7 +129,7 @@
                 </div>
             </div>
                     <div class=" totalCard col-sm">
-                        <div class="circle_percent" id={{"percent".$i}} data-percent="">
+                        <div class="circle_percent" id={{"percent".$i}} data-percent={{($values[$i]['attended_count']/$values[$i]['total_count'])*100}}>
                             <div class="circle_inner">
                                 <div class="round_per"></div>
                             </div>
@@ -131,49 +139,47 @@
     </div>
 @endfor
 <script>
-    var values = {!! json_encode(Session::get('values'), JSON_HEX_TAG) !!}
     function onLoad()
         {
-            var i =0;
-            var total_lectures = 0;
-            var attended_lectures = 0;
-            console.log(values);
-            for(i=0;i<values.length;i++)
-            {
-                total_lectures = total_lectures + values[i]["total_count"];
-                attended_lectures = attended_lectures + values[i]["attended_count"]
-            }
-            for(i=0;i<values.length;i++) {
-                document.getElementById("subject_name" + i.toString()).innerHTML = values[i]["subject_name"];
-                document.getElementById("faculty_name" + i.toString()).innerHTML = "Faculty Name : " + values[i]["faculty_name"];
-                document.getElementById("faculty_email" + i.toString()).innerHTML = values[i]["faculty_email"];
-                document.getElementById("faculty_email" + i.toString()).setAttribute('href',"mailto:"+values[i]["faculty_email"].toString());
-                document.getElementById("attended_lectures" + i.toString()).innerHTML = "Attended Lectures : "+values[i]["attended_count"];
-                document.getElementById("total_lectures" + i.toString()).innerHTML = "Total Lectures : "+values[i]["total_count"];
-                var precent_val = 0;
-                if (values[i]["total_count"]!=0)
-                {
-                    percent_val = parseInt((values[i]["attended_count"]/values[i]["total_count"])*100);
-                }
-                if (percent_val > 75)
-                {
-                    document.getElementById("status"+ i.toString()).innerHTML = "status : On Track";
-                }
-                else if(percent_val > 60)
-                {
-                    document.getElementById("status"+ i.toString()).innerHTML = "status : Average";
-                }
-                else
-                {
-                    document.getElementById("status"+ i.toString()).innerHTML = "status : Poor ";
-                }
-                document.getElementById("percent"+ i.toString()).setAttribute("data-percent",percent_val.toString());
-            }
-            document.getElementById("tc").innerHTML = total_lectures;
-            document.getElementById("ac").innerHTML = attended_lectures;
-            var percent = parseInt((attended_lectures/total_lectures)*100);
-            var elementVar = document.getElementById("percent");
-            elementVar.setAttribute("data-percent",percent);
+            // var i =0;
+            // var total_lectures = 0;
+            // var attended_lectures = 0;
+            // for(i=0;i<values.length;i++)
+            // {
+            //     total_lectures = total_lectures + values[i]["total_count"];
+            //     attended_lectures = attended_lectures + values[i]["attended_count"]
+            // }
+            // for(i=0;i<values.length;i++) {
+            //     document.getElementById("subject_name" + i.toString()).innerHTML = values[i]["subject_name"];
+            //     document.getElementById("faculty_name" + i.toString()).innerHTML = "Faculty Name : " + values[i]["faculty_name"];
+            //     document.getElementById("faculty_email" + i.toString()).innerHTML = values[i]["faculty_email"];
+            //     document.getElementById("faculty_email" + i.toString()).setAttribute('href',"mailto:"+values[i]["faculty_email"].toString());
+            //     document.getElementById("attended_lectures" + i.toString()).innerHTML = "Attended Lectures : "+values[i]["attended_count"];
+            //     document.getElementById("total_lectures" + i.toString()).innerHTML = "Total Lectures : "+values[i]["total_count"];
+            //     var precent_val = 0;
+            //     if (values[i]["total_count"]!=0)
+            //     {
+            //         percent_val = parseInt((values[i]["attended_count"]/values[i]["total_count"])*100);
+            //     }
+            //     if (percent_val > 75)
+            //     {
+            //         document.getElementById("status"+ i.toString()).innerHTML = "status : On Track";
+            //     }
+            //     else if(percent_val > 60)
+            //     {
+            //         document.getElementById("status"+ i.toString()).innerHTML = "status : Average";
+            //     }
+            //     else
+            //     {
+            //         document.getElementById("status"+ i.toString()).innerHTML = "status : Poor ";
+            //     }
+            //     document.getElementById("percent"+ i.toString()).setAttribute("data-percent",percent_val.toString());
+            // }
+            // document.getElementById("tc").innerHTML = total_lectures;
+            // document.getElementById("ac").innerHTML = attended_lectures;
+            // var percent = parseInt((attended_lectures/total_lectures)*100);
+            // var elementVar = document.getElementById("percent");
+            // elementVar.setAttribute("data-percent",percent);
             $(".count").each(function () {
                 $(this)
                     .prop("Counter", 0)
@@ -224,8 +230,8 @@
             });
 
         }
-    onLoad();
+        onLoad();
+
 </script>
 </body>
 </html>
-{{--<script src="/js/main.js"></script>--}}
