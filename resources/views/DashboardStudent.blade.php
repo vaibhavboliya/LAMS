@@ -75,7 +75,7 @@
     <div class="fluid-container topcontainer" id={{$i}}>
         <div class="row">
             <div class="col-sm-3">
-                <div class="image-container">
+                <div style='padding-top:5rem;display:flex;justify-content:center;align-items:center' class="container">
                     <img class="Subject_img" width="100px" src="/images/{{$values[$i]['subject_name']}}.png" alt="Subject_img">
                 </div>
             </div>
