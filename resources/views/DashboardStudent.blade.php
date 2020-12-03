@@ -83,7 +83,7 @@
                 <div class="details-container">
                     <h3 class="subject_names" id={{"subject_name".$i}}>{{$values[$i]['subject_name']}}</h3>
                     <h5 class="faculty_names" id={{"faculty_name".$i}}>{{$values[$i]['faculty_name']}}</h5>
-                    <a id={{"faculty_email".$i}} class="text-dark" href="">{{$values[$i]['faculty_email']}}</a>
+                    <a id={{"faculty_email".$i}} class="text-dark" href="mailto::{{$values[$i]['faculty_email']}}">{{$values[$i]['faculty_email']}}</a>
                     <h5 class="attended_lectures" id={{"attended_lectures".$i}}>Number of Lectures Attended : {{$values[$i]['attended_count']}}</h5>
                     <h5 class="total_lectures" id={{"total_lectures".$i}}><span>Total Number of Lectures : </span><span>{{$values[$i]['total_count']}}</span></h5>
                     <h6 class="Status" id={{"status".$i}}>
