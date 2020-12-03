@@ -95,8 +95,8 @@
                     </h6>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="previous-four-records table-responsive-sm">
+            <div class="col-sm-3 datatable">
+                <div class="previous-four-records table-responsive-sm ">
                     <table class="table table-striped">
                         <thead>
                         <th scope="col">Date</th>
