@@ -16,7 +16,7 @@
 <body>
 <div>
     <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">LAMS</a>
+        <a href={{route('Dashboard')}} class="navbar-brand">LAMS</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div style='padding-top:5rem;display:flex;justify-content:center;align-items:center' class="container">
-                    <img class="Subject_img" width="100px" src="/images/{{$values[$i]['subject_name']}}.png" alt="Subject_img">
+                    <img class="Subject_img" width="100px" src="/images/{{$values[$i]['subject_name']}}.png" alt={{$values[$i]['subject_name']}}>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -95,37 +95,42 @@
                     </h6>
                 </div>
             </div>
+{{--            TODO : previous 4 attendance in the table--}}
             <div class="col-sm-3 datatable">
                 <div class="previous-four-records table-responsive-sm ">
-                    <table class="table table-striped">
-                        <thead>
-                        <th scope="col">Date</th>
-                        <th scope="col">Time</th>
-                        <th scope="col">status</th>
-                        </thead>
-                        <tbody>
-                        <tr class="table-success">
-                            <td>24/09/2020</td>
-                            <td>1:00 pm</td>
-                            <td>Present</td>
-                        </tr>
-                        <tr class="table-danger">
-                            <td>23/09/2020</td>
-                            <td>12:00 pm</td>
-                            <td>Absent</td>
-                        </tr>
-                        <tr class="table-success">
-                            <td>22/09/2020</td>
-                            <td>2:00 pm</td>
-                            <td>Present</td>
-                        </tr>
-                        <tr class="table-danger">
-                            <td>21/09/2020</td>
-                            <td>3:00 pm</td>
-                            <td>Absent</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    @if($values[$i]['total_count'] < 4)
+                            {{"Data is not sufficent"}}
+                    @else
+                        <table class="table table-striped">
+                            <thead>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">status</th>
+                            </thead>
+                            <tbody>
+                            <tr class="table-success">
+                                <td>24/09/2020</td>
+                                <td>1:00 pm</td>
+                                <td>Present</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>23/09/2020</td>
+                                <td>12:00 pm</td>
+                                <td>Absent</td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>22/09/2020</td>
+                                <td>2:00 pm</td>
+                                <td>Present</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>21/09/2020</td>
+                                <td>3:00 pm</td>
+                                <td>Absent</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    @endif
                 </div>
             </div>
                     <div class=" totalCard col-sm">
