@@ -43,7 +43,7 @@
       <br>
     <div class="totalCard col-sm bold">
       <div>
-      <span class="total_count" id="tc">{{$count_t}}</span>
+      <span style="font-size:3rem" class="total_count" id="tc">{{$count_t}}</span>
     </div>
     <div>
       Total Lectures
@@ -52,7 +52,7 @@
       <br>
     <div class=" totalCard col-sm bold">
       <div>
-      <span class="attended_count" id="ac">
+      <span style="font-size:3rem"class="attended_count" id="ac">
           {{$count_a}}
     </span>
     </div>
