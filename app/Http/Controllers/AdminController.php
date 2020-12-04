@@ -14,4 +14,6 @@ class AdminController extends Controller
         $result = DB::select(DB::raw($sqlQuery));
         return $result;
     }
+    
 }
+

@@ -36,6 +36,7 @@
     </div>
     <form action={{route('submitattendance')}} method="POST" class="atform">
         @csrf
+        {{-- <input type ="date" name="date"  class="form-control" value={{$date}} > --}}
     <div class = "container-fluid ">
         <div class="form-row ">
             <h3>Mark Attendance</h3>
@@ -43,33 +44,33 @@
     <div class="form-row ">
         <div class="form-group col-3 ">
             <label class= "lecture">Time of lecture</label>
-            <input type ="date" name="date" disabled  value={{$date}} class="form-control" >
+            <input readonly type ="date" name="date"  class="form-control" value={{$date}} >
         </div>
 
         <div class="form-group col-3">
             <label class= "lecture">Time of lecture</label>
-            <input type = "time" name="time" disabled value={{$time}} class="form-control" >
+            <input readonly type = "time" name="time"  class="form-control" value={{$time}} >
         </div>
     </div>
       <div class="form-row">
         <div class="form-group col-3  ">
             <label for="class">Class</label>
-            <input type="text" name="class_name"  class="form-control" disabled value={{$class_name}}>
+            <input readonly type="text" name="class_name"  class="form-control"  value={{$class_name}}>
         </div>
         <div class="form-group col-3 ">
             <label for="class">Subject</label>
-            <input disabled type="text" name="subject" class="form-control" value={{$subject}}>
+            <input readonly type="text" name="subject" class="form-control" value={{$subject}}>
         </div>
       </div>
     </div>
     <div class="container-fluid">
+        <label for="read-input">Enter Expression Here to check for Attendance</label>
         <div class = "form-row">
             <div class="form-group col-3">
-                <label for="read-input">Enter Expression Here to check for Attendance</label>
                 <input type="text" id="read-input" class="form-control">
             </div>
             <div class="form-group col-3">
-                <br>
+                
             <button  type="button" class="markbutton btn btn-outline-warning btn-block" id ="bt-input">Mark</button>
             </div>
         </div>
