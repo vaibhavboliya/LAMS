@@ -12,8 +12,9 @@ class AdminController extends Controller
     {
         $sqlQuery = "SELECT * FROM users";
         $result = DB::select(DB::raw($sqlQuery));
-        return $result;
+        // return $result;
+        return View('userView');
     }
-    
+
 }
 
