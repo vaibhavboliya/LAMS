@@ -36,7 +36,7 @@
     </div>
     <form action={{route('submitattendance')}} method="POST" class="atform">
         @csrf
-        {{-- <input type ="date" name="date"  class="form-control" value={{$date}} > --}}
+     
     <div class = "container-fluid ">
         <div class="form-row ">
             <h3>Mark Attendance</h3>
