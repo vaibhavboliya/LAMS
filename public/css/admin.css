@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+select:onfocus {
+    outline: none;
+    border: none;
+}
+select {
+    outline: none;
+    border: none;
+}
