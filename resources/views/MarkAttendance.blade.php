@@ -10,7 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"> var ok;</script>
 
-    <title>Teachers Dashboard</title>
+    <title>Mark Attendance</title>
 </head>
 <body>
     <div>
@@ -22,10 +22,10 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a href={{route('Dashboard')}} class="nav-link active">Dashboard</a>
+                        <a href="#" class="nav-link active">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/notexists" class="nav-link">Profile</a>
+                        <a href="#" class="nav-link">Profile</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
@@ -34,65 +34,46 @@
             </div>
         </nav>
     </div>
-   
 
     <form action="" method="POST" class="atform">
+
     <div class = "container-fluid ">
+        <div class="form-row ">
+            <h3>Mark Attendance</h3>
+        </div>
     <div class="form-row ">
-        <div class="form-group col-6 ">
+        <div class="form-group col-3 ">
             <label class= "lecture">Time of lecture</label>
-            <input id="lecture" name="lect-date" type ="date" class="form-control noemp" >
+            <input disabled id="lecture" value={{$date}} name="lect-date" type ="date" class="form-control noemp" >
         </div>
 
-        <div class="form-group col-6">
+        <div class="form-group col-3">
             <label class= "lecture">Time of lecture</label>
-            <input id="lecture" name="lect-date" type ="time" class="form-control noemp" >
+            <input disabled value={{$time}} id="lecture" name="lect-date" type ="time" class="form-control noemp" >
         </div>
     </div>
       <div class="form-row">
-        <div class="form-group col-6  ">
-            <label for="class"> Choose your class</label>
-            <input type="text" list = "classes" id = "class" class="form-control noemp">
-            <!--<div class="alert alert-danger" role="alert">You have not filled out all fields</div>-->
-            <datalist id ="classes">
-                <option value="D2C">D2C</option>
-                <option value="D7C">D7C</option>
-                <option value="D12C">D12C</option>
-                <option value="D17C">D17C</option>
-            </datalist>
-           
+        <div class="form-group col-3  ">
+            <label for="class">Class</label>
+            <input type="text" disabled value={{$class_name}} list = "classes" id = "class" class="form-control noemp">
         </div>
-        <div class="form-group col-6 ">
-            <label for="class"> Choose your class</label>
-            <input type="text" list = "subjects" id = "class" class="form-control noemp">
-            <datalist id ="subjects">
-                <option value="Maths-3">Maths-3</option>
-                <option value="DLDA">DLDA</option>
-                <option value="SPA">SPA</option>
-            </datalist>
+        <div class="form-group col-3 ">
+            <label for="class">Subject</label>
+            <input type="text" disabled value={{$subject}} id = "class" class="form-control noemp">
         </div>
       </div>
     </div>
     <div class="container-fluid">
         <div class = "form-row">
-            <div class="form-group col-8">
+            <div class="form-group col-3">
                 <label for="read-input">Enter Expression Here to check for Attendance</label>
                 <input type="text" id="read-input" class="form-control">
             </div>
-            <button  style="border-radius: 50px;
-            outline: none;
-            border: none;
-            background-color: orange;
-            padding: 10px 40px;
-            margin: 1em;" type="button" class="markbutton " id ="bt-input">Mark</button>
-        </div>
-        <!-- alt shite <div class="form-group">
-            <div class=" form-check form-check-inline ">
-                <input type="checkbox" class="form-check-input" id ="1" checked> <label for ="1" class="form-check-label">1</label>
+            <div class="form-group col-3">
+                <br>
+            <button  type="button" class="markbutton btn btn-outline-warning btn-block" id ="bt-input">Mark</button>
             </div>
-            <div class="form -check form-check-inline ">
-                <input type="checkbox" class="form-check-input" id ="2"> <label for ="2" class = "form-check-label">2</label>
-            </div> -->
+        </div>
         <div id ="no-ck">
         <div class="container row ">
 
@@ -100,7 +81,7 @@
                 <table class="table table-striped">
                     <thead>
                       <tr>
-                        
+
                         <th scope="col">First</th>
                         <th scope="col">Last</th>
                         <th scope="col">Roll No</th>
@@ -108,24 +89,14 @@
                       </tr>
                     </thead>
                     <tbody>
+                    @for($i=0;$i<$count;$i++)
                       <tr>
-                        <th scope="row">Sparsh</th>
-                        <td>Amernani</td>
-                        <td>01</td>
-                        <td><input style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;" type="checkbox" class="form-check-input" id ="1"></td>
+                        <th scope="row">{{$student_f[$i]}}</th>
+                        <td>{{$student_l[$i]}}</td>
+                        <td>{{$student_r[$i]}}</td>
+                        <td><input value={{$student_r[$i]}} style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;" type="checkbox" class="form-check-input" id ={{$student_r[$i]}}></td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      @endfor
                     </tbody>
                   </table>
 
@@ -135,7 +106,7 @@
     </form>
 </body>
 <script>
-   
+
     $("input[type=checkbox]").prop("checked",true);
     $("#read-input").focus(function()
     {
@@ -176,6 +147,6 @@
         }
         $("#no-ck").show(250);
     });
-    
+
 </script>
 </html>
