@@ -36,7 +36,7 @@
     </div>
     <form action={{route('submitattendance')}} method="POST" class="atform">
         @csrf
-     
+
     <div class = "container-fluid ">
         <div class="form-row ">
             <h3>Mark Attendance</h3>
@@ -70,7 +70,7 @@
                 <input type="text" id="read-input" class="form-control">
             </div>
             <div class="form-group col-3">
-                
+
             <button  type="button" class="markbutton btn btn-outline-warning btn-block" id ="bt-input">Mark</button>
             </div>
         </div>
@@ -95,12 +95,14 @@
                         <td>{{$student_l[$i]}}</td>
                         <td>{{$student_r[$i]}}</td>
                           <td>
-                              <input name={{$student_r[$i]}} value={{$student_r[$i]}}  type="checkbox" class="form-check-input" id ={{$student_r[$i]}} style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;"></td>
+                              <input name={{$i}} value={{$student_r[$i]}}  type="checkbox" class="form-check-input" id ={{$student_r[$i]}} style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;"></td>
                       </tr>
                       @endfor
                     </tbody>
                   </table>
-
+                <input type="number" hidden name = "count" value="{{$count}}">
+                <input type="number" hidden name = "class_id" value="{{$class_id}}">
+                <input type="number" hidden name = "teaches_id" value="{{$teaches_id}}">
     <div class="container-fluid">
         <button type="submit" class="btn btn-outline-success col-lg-auto sub">Complete Your Attendance</button>
         </div>

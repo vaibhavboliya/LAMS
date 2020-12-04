@@ -51,12 +51,16 @@ class TeacherDashboard extends Controller
         {
             $subject_id = $subject->subject_id;
         }
+        $teaches_id = DB::table('teaches')->select('teaches_id')->where('class_id','=',$class_id)->where('subject_id','=',$subject_id)->where('teacher_id','=',$teacher_id)->get();
+        foreach ($teaches_id as $teaches)
+        {
+            $teaches_id = $teaches->teaches_id;
+        }
         $subject_name = DB::table('subject')->select('subject_name')->where('subject_id','=',$subject_id)->get();
         foreach ($subject_name as $subject)
         {
             $subject_name = $subject->subject_name;
         }
-
         $students = DB::table('student')->select('*')->where('class_id','=',$class_id)->orderBy('Roll_No','asc')->get();
         $student_f = array();
         $student_l = array();
@@ -71,10 +75,30 @@ class TeacherDashboard extends Controller
             $student_r[$i] = $student->Roll_No;
             $i++;
         }
-        return View('MarkAttendance')->with('subject',$subject_name)->with('count',$count)->with('student_r',$student_r)->with('student_l',$student_l)->with('student_f',$student_f)->with('class_name',$class_name)->with('time',$time)->with('date',$date);
+        return View('MarkAttendance')->with('teaches_id',$teaches_id)->with('class_id',$class_id)->with('subject',$subject_name)->with('count',$count)->with('student_r',$student_r)->with('student_l',$student_l)->with('student_f',$student_f)->with('class_name',$class_name)->with('time',$time)->with('date',$date);
     }
     public function submitattendance(Request $req)
     {
-        return $req;
+        $teaches_id = $req->teaches_id;
+        $subject_name = $req->subject;
+        $class_name = $req->class_name;
+        $class_id = $req->class_id;
+        $date = $req->date;
+        $time = $req->time;
+        $attended = "";
+        $count = $req->count;
+        for ($i=0;$i<$count;$i++)
+        {
+            if($req->$i == NULL)
+            {
+            }
+            else
+            {
+
+                $attended = $attended.$req->$i.",";
+            }
+        }
+        DB::insert('insert into attends values(?,?,?,?)',array($date,$time,$teaches_id,$attended));
+        return redirect()->route('TeacherDashboard');
     }
 }
