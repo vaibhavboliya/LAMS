@@ -34,9 +34,8 @@
             </div>
         </nav>
     </div>
-
-    <form action="" method="POST" class="atform">
-
+    <form action={{route('submitattendance')}} method="POST" class="atform">
+        @csrf
     <div class = "container-fluid ">
         <div class="form-row ">
             <h3>Mark Attendance</h3>
@@ -44,22 +43,22 @@
     <div class="form-row ">
         <div class="form-group col-3 ">
             <label class= "lecture">Time of lecture</label>
-            <input disabled id="lecture" value={{$date}} name="lect-date" type ="date" class="form-control noemp" >
+            <input type ="date" name="date" disabled  value={{$date}} class="form-control" >
         </div>
 
         <div class="form-group col-3">
             <label class= "lecture">Time of lecture</label>
-            <input disabled value={{$time}} id="lecture" name="lect-date" type ="time" class="form-control noemp" >
+            <input type = "time" name="time" disabled value={{$time}} class="form-control" >
         </div>
     </div>
       <div class="form-row">
         <div class="form-group col-3  ">
             <label for="class">Class</label>
-            <input type="text" disabled value={{$class_name}} list = "classes" id = "class" class="form-control noemp">
+            <input type="text" name="class_name"  class="form-control" disabled value={{$class_name}}>
         </div>
         <div class="form-group col-3 ">
             <label for="class">Subject</label>
-            <input type="text" disabled value={{$subject}} id = "class" class="form-control noemp">
+            <input disabled type="text" name="subject" class="form-control" value={{$subject}}>
         </div>
       </div>
     </div>
@@ -85,7 +84,7 @@
                         <th scope="col">First</th>
                         <th scope="col">Last</th>
                         <th scope="col">Roll No</th>
-                        <th scope="col">Mark</th>
+                        <th scope="col">Mark Attendance</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -94,19 +93,19 @@
                         <th scope="row">{{$student_f[$i]}}</th>
                         <td>{{$student_l[$i]}}</td>
                         <td>{{$student_r[$i]}}</td>
-                        <td><input value={{$student_r[$i]}} style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;" type="checkbox" class="form-check-input" id ={{$student_r[$i]}}></td>
+                          <td>
+                              <input name={{$student_r[$i]}} value={{$student_r[$i]}}  type="checkbox" class="form-check-input" id ={{$student_r[$i]}} style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;"></td>
                       </tr>
                       @endfor
                     </tbody>
                   </table>
 
     <div class="container-fluid">
-        <button type="button" class="btn btn-outline-success col-lg-auto sub">Complete Your Attendance</button>
+        <button type="submit" class="btn btn-outline-success col-lg-auto sub">Complete Your Attendance</button>
         </div>
     </form>
 </body>
 <script>
-
     $("input[type=checkbox]").prop("checked",true);
     $("#read-input").focus(function()
     {

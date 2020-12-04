@@ -60,7 +60,7 @@ class TeacherDashboard extends Controller
         $students = DB::table('student')->select('*')->where('class_id','=',$class_id)->orderBy('Roll_No','asc')->get();
         $student_f = array();
         $student_l = array();
-        $studnet_r = array();
+        $student_r = array();
         $i = 0;
         $count = 0;
         foreach($students as $student)
@@ -72,5 +72,9 @@ class TeacherDashboard extends Controller
             $i++;
         }
         return View('MarkAttendance')->with('subject',$subject_name)->with('count',$count)->with('student_r',$student_r)->with('student_l',$student_l)->with('student_f',$student_f)->with('class_name',$class_name)->with('time',$time)->with('date',$date);
+    }
+    public function submitattendance(Request $req)
+    {
+        return $req;
     }
 }
