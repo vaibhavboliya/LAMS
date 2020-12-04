@@ -1,0 +1,29 @@
+#no-ck {
+    padding-left: 15px;
+}
+body {
+    background-color: #4a5568;
+}
+.markbutton {
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: orange;
+    padding: 10px 20px;
+    margin: 1em;
+}
+.centerbox {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.box {
+    background-color: white;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 15px;
+    align-self: center;
+}
+.lecture-date {
+    margin: 10px 20px;
+}
