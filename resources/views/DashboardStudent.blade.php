@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color: #4a5568;">
 <div>
     <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
         <a href={{route('welcome')}} class="navbar-brand">LAMS</a>
