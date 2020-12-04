@@ -31,7 +31,6 @@ class HomeController extends Controller
         $count = DB::table('student')->where('Email','=',$email)->get()->count();
         if ($count == 0)
         {
-            //return view('student_registeration');
             return redirect()->route('StudentRegisteration');
         }
         else
