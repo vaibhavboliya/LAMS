@@ -36,7 +36,7 @@ class HomeController extends Controller
         }
         else
         {
-            return redirect()->route('Dashboard');
+            return redirect()->route('welcome');
         }
     }
 }
