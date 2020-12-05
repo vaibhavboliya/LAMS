@@ -42,33 +42,24 @@
                 <th scope="col">Sr. No.</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
+                  <th scope="col">Role</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>vaibhav</td>
-                <td>user@gmail.com</td>
+                  @for($i=0;$i<count($name);$i++)
+                <th scope="row">{{$i+1}}</th>
+                <td>{{$name[$i]}}</td>
+                <td>{{$email[$i]}}</td>
+                  <td>{{$role[$i]}}</td>
                 <td><a type="button" class="btn btn-success text-white">view</a></td>
                   <td><a type="button" class="btn btn-danger text-white">Delete</a></td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              @endfor
             </tbody>
           </table>
     </div>
-    
 </body>
 </html>
