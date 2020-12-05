@@ -35,18 +35,19 @@
         </nav>
     </div>
     <div class="centerbox">
-        <form action={{route('mark')}} method="POST" class="atform">
+        <form action={{route('edituser')}} method="POST" class="atform">
             @csrf
             <div class="box">
+                
                 <div class = "container-fluid ">
-                    <h3> Edit <span>username </span> </h3>
+                    <h3> Edit <span>{{$name}} </span> </h3>
                     <hr>
                     <div class="form-row ">
     
                         <div class="form-group lecture-date">
                             <label class= "lecture">Email</label>
     
-                            <input style="width: 350px" id="lecture" name="lect_date" class="form-control noemp" >
+                        <input style="width: 350px" id="lecture" name="lect_date" class="form-control noemp" value="{{$email}}" >
                         </div>
     
     
@@ -60,18 +61,16 @@
                     <hr>
                     <div class="form-group lecture-date">
                         <label class= "lecture">Role</label>
-                        <select name="class" class="custom-select" id="class">
+                        <input style="width: 350px" id="lecture" name="lect_date" class="form-control noemp" value="{{$role}}" >
+                        
+                        {{-- <select name="class" class="custom-select" id="class" value={{$role}}>
                             <option selected value="0">student</option>
                             <option selected value="1">teacher</option>
                             <option selected value="2">Admin</option>
-
-                        {{-- @foreach($classData as $data) --}}
-                                {{-- <option value={{$data}}>{{$data}}</option> --}}
-                            {{-- @endforeach --}}
-                        </select>
+                        </select> --}}
     
                     </div class="col-md-auto">
-                    <td><a style="margin-left:10%; margin-right: 30%" type="button" class="btn btn-success text-white">save</a></td>
+                    <td><a style="margin-left:10%; margin-right: 30%" type="submit" class="btn btn-success text-white">save</a></td>
                     <td><a type="button" class="btn btn-warning text-white">cancel</a></td>
                     {{-- <button type="submit" class="markbutton center" id ="bt-input">Mark Attendance</button> --}}
                 </div>

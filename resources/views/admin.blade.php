@@ -54,7 +54,7 @@
                 <td>{{$name[$i]}}</td>
                 <td>{{$email[$i]}}</td>
                   <td>{{$role[$i]}}</td>
-                <td><a type="button" class="btn btn-success text-white">view</a></td>
+                <td><a href="/admin/user/{{$id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
                   <td><a type="button" class="btn btn-danger text-white">Delete</a></td>
               </tr>
               @endfor
