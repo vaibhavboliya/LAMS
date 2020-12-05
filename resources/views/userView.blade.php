@@ -38,48 +38,38 @@
         <form action={{route('edituser')}} method="POST" class="atform">
             @csrf
             <div class="box">
-                
+
                 <div class = "container-fluid ">
-                    <h3> Edit <span>{{$name}} </span> </h3>
+                    <h3> Edit <span>{{$email}} </span> </h3>
                     <hr>
+                    <input type="email" name="email" hidden readonly value="{{$email}}">
                     <div class="form-row ">
-    
+
                         <div class="form-group lecture-date">
-                            <label class= "lecture">Email</label>
-    
-                        <input style="width: 350px" id="lecture" name="lect_date" class="form-control noemp" value="{{$email}}" >
+                            <label class= "lecture">Name</label>
+
+                        <input style="width: 350px" name="name" class="form-control" value="{{$name}}" >
                         </div>
-    
-    
-                        {{-- <div class="form-group lecture-date">
-                            <label class= "lecture">Time of lecture</label>
-    
-                            <input id="lecture" name="lect_time" type ="time" class="form-control noemp" >
-                        </div> --}}
-    
+
                     </div>
                     <hr>
                     <div class="form-group lecture-date">
                         <label class= "lecture">Role</label>
-                        <input style="width: 350px" id="lecture" name="lect_date" class="form-control noemp" value="{{$role}}" >
-                        
-                        {{-- <select name="class" class="custom-select" id="class" value={{$role}}>
-                            <option selected value="0">student</option>
-                            <option selected value="1">teacher</option>
-                            <option selected value="2">Admin</option>
-                        </select> --}}
-    
-                    </div class="col-md-auto">
-                    <td><a style="margin-left:10%; margin-right: 30%" type="submit" class="btn btn-success text-white">save</a></td>
-                    <td><a type="button" class="btn btn-warning text-white">cancel</a></td>
-                    {{-- <button type="submit" class="markbutton center" id ="bt-input">Mark Attendance</button> --}}
+                        <input style="width: 350px" name="role" class="form-control" value="{{$role}}" >
+                    </div>
+
+                    <div class="col-md-auto">
+                    <td><input style="margin-left:10%; margin-right: 30%" type="submit" class="btn btn-success text-white"></td>
+                    <td><a type="button" class="btn btn-warning text-white" href={{route('home.admin')}} >cancel</a></td>
                 </div>
-    
+                </div>
             </div>
-    
+        </form>
+            </div>
+
         </form>
     </div>
-    
-    
+
+
 </body>
 </html>

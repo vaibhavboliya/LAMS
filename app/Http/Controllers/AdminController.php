@@ -51,8 +51,19 @@ class AdminController extends Controller
     }
     public function edituser(Request $request)
     {
-        return $request;
+        $email = $request->email;
+        $name = $request->name;
+        $role = $request->role;
+        DB::update('update users set is_teacher = ? , name = ? where email = ?',array($role,$name,$email));
+        return redirect()->route('home.admin');
 
+    }
+    public function deleteuser(Request $request)
+    {
+        $id = $request->route('id');
+        $sqlQuery = "delete FROM users where id= ?";
+        DB::delete($sqlQuery,array($id));
+        return redirect()->route('home.admin');
     }
 
 }
