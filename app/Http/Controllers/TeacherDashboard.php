@@ -83,9 +83,9 @@ class TeacherDashboard extends Controller
         $subject_name = $req->subject;
         $class_name = $req->class_name;
         $class_id = $req->class_id;
+        $attended = "";
         $date = $req->date;
         $time = $req->time;
-        $attended = "";
         $count = $req->count;
         for ($i=0;$i<$count;$i++)
         {
@@ -98,6 +98,7 @@ class TeacherDashboard extends Controller
                 $attended = $attended.$req->$i.",";
             }
         }
+        $attended = $attended."0";
         DB::insert('insert into attends values(?,?,?,?)',array($date,$time,$teaches_id,$attended));
         return redirect()->route('TeacherDashboard');
     }

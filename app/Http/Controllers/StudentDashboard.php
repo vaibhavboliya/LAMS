@@ -16,7 +16,7 @@ class StudentDashboard extends Controller
         $this->middleware('auth');
         $this->middleware('revalidate');
     }
-    function attendance()
+    public function attendance()
     {
         $email = Auth::user()->email;
         $student_data = DB::table('student')->select('*')->where('Email','=',$email)->get();
@@ -58,7 +58,8 @@ class StudentDashboard extends Controller
                     {
                         $total_count++;
                          $l=$lect->attended_rno;
-                         if(strpos($l,(string)$student_details[0]))
+                         $l = explode(',',$l);
+                         if(in_array($student_details[0],$l))
                          {
                              $attended_count++;
                          }
@@ -116,6 +117,10 @@ class StudentDashboard extends Controller
             $count_t = $count_t + $data['total_count'];
         }
 
-    return View('DashboardStudent')->with( ['count_t' => $count_t])->with( ['count_a' => $count_a])->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
+    return View('DashboardStudent')->with('dept',$student_details[3])->with( ['count_t' => $count_t])->with( ['count_a' => $count_a])->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
+    }
+    public function profile()
+    {
+        return View('profile');
     }
 }

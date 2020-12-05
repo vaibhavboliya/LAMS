@@ -23,10 +23,10 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a href={{route('Dashboard')}} class="nav-link active">Dashboard</a>
+                    <a class="nav-link active" href={{route('Dashboard')}} >Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/notexists" class="nav-link">Profile</a>
+                    <a class="nav-link" href={{route('profile')}}>Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
@@ -62,7 +62,12 @@
     </div>
       <br>
     <div class=" totalCard col-sm">
-    <div class="circle_percent" id="percent" data-percent={{($count_a/$count_t)*100}}>
+    <div class="circle_percent" id="percent"
+         @if($count_t != 0)
+         data-percent={{($count_a/$count_t)*100}}>
+        @else
+            data-percent=0>
+        @endif
       <div class="circle_inner">
           <div class="round_per"></div>
         </div>
@@ -76,7 +81,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div style='padding-top:5rem;display:flex;justify-content:center;align-items:center' class="container">
-                    <img class="Subject_img" width="100px" src="/images/{{$values[$i]['subject_name']}}.png" alt={{$values[$i]['subject_name']}}>
+                    <img class="Subject_img" width="100px" src="/images/{{$dept}}/{{$values[$i]['subject_name']}}.png" alt={{$values[$i]['subject_name']}}>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -87,11 +92,16 @@
                     <h5 class="attended_lectures" id={{"attended_lectures".$i}}>Number of Lectures Attended : {{$values[$i]['attended_count']}}</h5>
                     <h5 class="total_lectures" id={{"total_lectures".$i}}><span>Total Number of Lectures : </span><span>{{$values[$i]['total_count']}}</span></h5>
                     <h6 class="Status" id={{"status".$i}}>
+                        @if($values[$i]['total_count'] != 0)
                         @if(($values[$i]['attended_count']/$values[$i]['total_count'])*100 < 60)
                             <h2><span class='text-danger'>{{"Poor"}}</span></h2>
                         @else
                             <h2><span class='text-primary'>{{"Good"}}</span></h2>
                         @endif
+                        @else
+                            <h2><span class='text-warning'>{{"No Remarks"}}</span></h2>
+                            @endif
+
                     </h6>
                 </div>
             </div>
@@ -99,7 +109,7 @@
             <div class="col-sm-3 datatable">
                 <div class="previous-four-records table-responsive-sm ">
                     @if($values[$i]['total_count'] < 4)
-                            {{"Data is not sufficent"}}
+                        <h3 style="margin-top: 3em">{{"Data is not sufficient"}}</h3>
                     @else
                         <table class="table table-striped">
                             <thead>
@@ -134,7 +144,12 @@
                 </div>
             </div>
                     <div class=" totalCard col-sm">
-                        <div class="circle_percent" id={{"percent".$i}} data-percent={{($values[$i]['attended_count']/$values[$i]['total_count'])*100}}>
+                        <div class="circle_percent" id={{"percent".$i}}
+                        @if($values[$i]['total_count'] != 0)
+                            data-percent={{($values[$i]['attended_count']/$values[$i]['total_count'])*100}}>
+                            @else
+                            data-percent = 0>
+                            @endif
                             <div class="circle_inner">
                                 <div class="round_per"></div>
                             </div>

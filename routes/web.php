@@ -42,6 +42,7 @@ Route::get('/home/student', [App\Http\Controllers\HomeController::class, 'index'
 Route::get('/StudentRegister',function(){return view('student_registeration');})->name('StudentRegisteration')->middleware('auth')->middleware('revalidate');;
 Route::post('/status','App\Http\Controllers\Regcontrol@reg')->middleware('auth')->middleware('revalidate');;
 Route::get('/Dashboard','App\Http\Controllers\StudentDashboard@attendance')->name('Dashboard')->middleware('auth')->middleware('revalidate');;
+Route::get('/profile','App\Http\Controllers\StudentDashboard@profile')->name('profile')->middleware('auth')->middleware('revalidate');;
 
 // ====================================teacher routes===================================
 route::get('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'Dashboard'])->name('TeacherDashboard');
