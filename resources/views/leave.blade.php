@@ -12,9 +12,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/DashboardStudent.css">
 </head>
 <body style="background-color: #4a5568;">
-<div>
+<div >
     <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
         <a href={{route('welcome')}} class="navbar-brand">LAMS</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -38,8 +39,9 @@
         </div>
     </nav>
 </div>
-<div class="top-container">
-    <a href={{route('leaveform')}}><button class="btn btn-outline-success">Apply For New Leave</button></a>
+<div class="container form bg-white">
+<div class="top-container ">
+    <a href={{route('leaveform')}}><button class="btn btn-success margintop-20">Apply For New Leave</button></a>
 </div>
 <h3>Your Leave Applications</h3>
 <div class="middle-container">
@@ -91,6 +93,8 @@
 
         </tbody>
     </table>
+
+</div>
 </div>
 </body>
 </html>

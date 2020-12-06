@@ -1,25 +1,24 @@
-.top-container
-{
+.top-container {
     margin-top: 10%;
     margin-left: 10%;
 }
-.middle-container
-{
+.middle-container {
     margin-top: 5%;
     margin-left: 10%;
     width: 80%;
     height: 80%;
 }
-h3
-{
+h3 {
     padding-top: 5%;
     text-align: center;
 }
-.form
-{
+.form {
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 2%;
     margin-top: 5%;
     border-radius: 50px;
+}
+.margintop-20 {
+    margin-top: 20px;
 }
