@@ -22,11 +22,12 @@
 }
 .datatable {
     border-radius: 10px;
-    -webkit-box-shadow: -5px -14px 73px -27px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -5px -14px 73px -27px rgba(0, 0, 0, 0.75);
-    box-shadow: -5px -14px 73px -27px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -8px 10px 15px -2px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: -8px 10px 15px -2px rgba(0, 0, 0, 0.49);
+    box-shadow: -8px 10px 15px -2px rgba(0, 0, 0, 0.49);
     background-color: rgb(238, 245, 206);
 }
+
 .overall {
     justify-content: space-between;
     display: flex;
