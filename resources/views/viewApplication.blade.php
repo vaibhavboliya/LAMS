@@ -23,10 +23,10 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href={{route('Dashboard')}} >Dashboard</a>
+                    <a class="nav-link" href=# >Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href={{route('leaveapply')}}>Apply for Leave</a>
+                    <a class="nav-link active" href=#>Apply for Leave</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href={{route('profile')}}>Profile</a>
@@ -38,23 +38,21 @@
         </div>
     </nav>
 </div>
-    <div class="container form bg-white">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-                <div class="row">
-                    <div class="col">
-                        <h3>Leave Application</h3>
-                        <hr>
-                    </div>
+<div class="container form bg-white">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+            <div class="row">
+                <div class="col">
+                    <h3>Leave Application</h3>
+                    <hr>
                 </div>
-                <form method="POST" action={{route('leaveformsubmit')}}>
-                    @csrf
+            </div>
                 <div class="row align-items-center">
                     <div class="col mt-4">
                         <label for="start-date">Start Date</label>
                     </div>
                     <div class="col mt-4">
-                        <input required type="date" class="form-control" name="startdate" min="<?php echo date("Y-m-d"); ?>">
+                        <input required type="date" class="form-control" readonly name="startdate"  min="<?php echo date("Y-m-d"); ?>" value={{$start}}>
                     </div>
                 </div>
                 <div class="row align-items-center">
@@ -62,34 +60,55 @@
                         <label for="end-date">End Date</label>
                     </div>
                     <div class="col mt-4">
-                        <input required type="date" class="form-control" name="enddate" min="<?php echo date("Y-m-d"); ?>">
+                        <input required type="date" class="form-control" readonly name="enddate" min="<?php echo date("Y-m-d"); ?>" value={{$end}}>
                     </div>
                 </div>
-            <div class="row align-items-center">
-                <div class="col mt-4">
-                    <label for="proof">reason</label>
-                </div>
-                <div class="col mt-4">
-                    <input type="text" class="form-control" name="reason">
-                </div>
-            </div>
                 <div class="row align-items-center">
                     <div class="col mt-4">
-                        <label for="proof">Google drive link for proof</label>
+                        <label for="proof">reason</label>
                     </div>
                     <div class="col mt-4">
-                        <input type="text" class="form-control" name="proof">
+                        <input type="text" class="form-control" readonly name="reason" value={{$reason}}>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col mt-4">
+                        <label for="Date of Applciation">Date Of Application</label>
+                    </div>
+                    <div class="col mt-4">
+                        <input type="date" readonly class="form-control" name="doa" value={{$applydate}}>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col mt-4">
+                        <label for="Time of Applciation">Time Of Application</label>
+                    </div>
+                    <div class="col mt-4">
+                        <input type="time" readonly class="form-control" name="toa" value={{$applytime}}>
                     </div>
                 </div>
                 <hr>
                 <div class="row justify-content-start mt-4">
                     <div class="col">
-                        <button class="btn btn-primary mt-4">Submit</button>
+                        <button class="btn btn-outline-primary"><a target="_blank" href={{$proof}}>View Proof</a></button>
+                    </div>
+                    <div class="col">
+                        <form method="POST" action={{route('accept')}}>
+                            @csrf
+                            <input type="number" hidden  name="lid" value={{$lid}}>
+                            <button type="submit" class="btn btn-outline-success">Accept</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        @csrf
+                        <form method="POST" action={{route('reject')}}>
+                            <input type="number" hidden  name="lid" value={{$lid}}>
+                            <button type="submit" class="btn btn-outline-danger">Reject</button>
+                        </form>
                     </div>
                 </div>
-                </form>
-            </div>
         </div>
     </div>
+</div>
 </body>
 </html>

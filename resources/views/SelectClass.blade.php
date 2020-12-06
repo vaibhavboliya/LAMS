@@ -22,10 +22,13 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a href={{route('Dashboard')}} class="nav-link active">Dashboard</a>
+                    <a  class="nav-link active" href={{route('TeacherDashboard')}}>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/notexists" class="nav-link">Profile</a>
+                    <a href={{route('viewLeave')}} class="nav-link">Leave Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">

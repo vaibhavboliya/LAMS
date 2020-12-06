@@ -52,7 +52,10 @@ route::get('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'D
 route::post('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'mark'])->name('mark');
 Route::post('/submitattendance',[\App\Http\Controllers\TeacherDashboard::class,'submitattendance'])->name('submitattendance');
 Route::get('/home/teacher', [App\Http\Controllers\Teacher::class, 'index'])->name('home.teacher')->middleware('verified');
-
+Route::get('/viewLeave','App\Http\Controllers\LeaveController@viewleave')->name('viewLeave')->middleware('verified');
+Route::post('/viewapplication','App\Http\Controllers\LeaveController@viewapplication')->name('viewApplication')->middleware('verified');
+Route::post('/accept','App\Http\Controllers\LeaveController@accept')->name('accept')->middleware('verified');
+Route::post('/reject','App\Http\Controllers\LeaveController@reject')->name('reject')->middleware('verified');
 // ====================================Admin routes===================================
 Route::get('/home/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('home.admin')->middleware('verified');
 Route::get('/admin/user/{email}', [App\Http\Controllers\AdminController::class, 'viewuser'])->name('admin.viewuser')->middleware('verified');

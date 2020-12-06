@@ -22,10 +22,13 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active">Dashboard</a>
+                        <a class="nav-link active" href={{route('TeacherDashboard')}} >Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Profile</a>
+                        <a href={{route('viewLeave')}} class="nav-link">Leave Applications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Profile</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
@@ -95,7 +98,7 @@
                         <td>{{$student_l[$i]}}</td>
                         <td>{{$student_r[$i]}}</td>
                           <td>
-                              <input name={{$i}} value={{$student_r[$i]}}  type="checkbox" class="form-check-input" id ={{$student_r[$i]}} style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;"></td>
+                              <input style="height: 25px; width: 25px; margin-left: 10px; padding: 5px;" name={{$i}}  type="checkbox" class="form-check-input" id ={{$student_r[$i]}}  value={{$student_r[$i]}}></td>
                       </tr>
                       @endfor
                     </tbody>
@@ -106,6 +109,10 @@
     <div class="container-fluid">
         <button type="submit" class="btn btn-outline-success col-lg-auto sub">Complete Your Attendance</button>
         </div>
+            </div>
+        </div>
+        </div>
+    </div>
     </form>
 </body>
 <script>
