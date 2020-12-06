@@ -28,11 +28,14 @@ class Regcontrol extends Controller
             $parentPhone = $req->parentPhone;
             $className = $req->className;
             $rollNo = $req->rollNo;
+            $semester = $req->semester;
+            $dept = $req->department;
             $class_id =  DB::table('class')->select('class_id')->where('class_name','=',$className)->get();
             foreach($class_id as $class)
                 $class_id = $class->class_id;
-            DB::insert('insert into student values(?,?,?,?,?,?,?,?,?,?,?)',array($enrollmentNumber,$rollNo,$firstName,$middleName,$lastName,$email1,$studentPhone,$parentPhone,5,"CMPN",$class_id));
+            DB::insert('insert into student values(?,?,?,?,?,?,?,?,?,?,?)',array($enrollmentNumber,$rollNo,$firstName,$middleName,$lastName,$email1,$studentPhone,$parentPhone,$semester,$dept,$class_id));
             return redirect()->route('logout');
         }
+        return redirect()->route('login');
     }
 }

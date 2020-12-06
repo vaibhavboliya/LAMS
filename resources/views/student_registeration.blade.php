@@ -87,11 +87,21 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="phone_number_student">Student's Phone Number<span class="text-danger">*</span></label>
-                <input name="studentPhone" type="number" class="form-control" placeholder="xxxxxxxxxx">
+                <input name="studentPhone" type="number" class="form-control" min="10" max="10" placeholder="xxxxxxxxxx">
             </div>
             <div class="form-group col-md-3">
                 <label for="phone_number_parent">Parent's Phone Number<span class="text-danger">*</span></label>
-                <input name="parentPhone" type="number" class="form-control" placeholder="xxxxxxxxxx">
+                <input name="parentPhone" type="number" class="form-control" min="10" max="10"  placeholder="xxxxxxxxxx">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="phone_number_student">Department<span class="text-danger">*</span></label>
+                <input name="department" type="text" class="form-control" value="CMPN" readonly>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="phone_number_parent">Semester<span class="text-danger">*</span></label>
+                <input name="semester" type="number" class="form-control" placeholder="1">
             </div>
         </div>
         <div class="form-row">

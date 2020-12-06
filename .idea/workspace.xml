@@ -28,10 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Leave Management System">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/leave.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/leave.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/viewApplication.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewApplication.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/viewLeave.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewLeave.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student_registeration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_registeration.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +219,7 @@
       <workItem from="1607235258417" duration="4166000" />
       <workItem from="1607240563049" duration="74000" />
       <workItem from="1607242163223" duration="24484000" />
-      <workItem from="1607273197903" duration="1773000" />
+      <workItem from="1607273197903" duration="2645000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1606331265423</created>
@@ -384,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607269256101</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Minor bug fix">
+      <created>1607275121693</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607275121693</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +435,8 @@
     <MESSAGE value="leave management system" />
     <MESSAGE value="routing for login page" />
     <MESSAGE value="Leave Management System" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leave Management System" />
+    <MESSAGE value="Minor bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor bug fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606331422626">
@@ -475,10 +481,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607269350902">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607275128845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607269350902" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607275128845" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607273205161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
