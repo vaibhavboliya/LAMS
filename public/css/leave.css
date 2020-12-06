@@ -19,6 +19,20 @@ h3 {
     margin-top: 5%;
     border-radius: 50px;
 }
-.margintop-20 {
+.box-height {
+    height: 70vh;
+    overflow: scroll;
+}
+.box-height::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.box-height {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.marginlt-20 {
     margin-top: 20px;
+    margin-left: 20px;
 }

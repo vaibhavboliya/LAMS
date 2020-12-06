@@ -55,7 +55,7 @@
                         <label for="start-date">Start Date</label>
                     </div>
                     <div class="col mt-4">
-                        <input type="date" class="form-control" name="startdate">
+                        <input required type="date" class="form-control" name="startdate" min="<?php echo date("Y-m-d"); ?>">
                     </div>
                 </div>
                 <div class="row align-items-center">
@@ -63,7 +63,7 @@
                         <label for="end-date">End Date</label>
                     </div>
                     <div class="col mt-4">
-                        <input type="date" class="form-control" name="enddate">
+                        <input required type="date" class="form-control" name="enddate" min="<?php echo date("Y-m-d"); ?>">
                     </div>
                 </div>
             <div class="row align-items-center">

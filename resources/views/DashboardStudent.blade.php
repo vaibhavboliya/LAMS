@@ -110,7 +110,7 @@
                 </div>
             </div>
 {{--            TODO : previous 4 attendance in the table--}}
-            <div class="col-sm-3 datatable marin-20">
+            <div class="col-sm-3 datatable">
                 <div class="previous-four-records table-responsive-sm ">
                     @if($values[$i]['total_count'] < 4)
                         <h3 style="margin-top: 3em">{{"Data is not sufficient"}}</h3>

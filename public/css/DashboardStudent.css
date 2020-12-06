@@ -27,9 +27,7 @@
     box-shadow: -8px 10px 15px -2px rgba(0, 0, 0, 0.49);
     background-color: rgb(238, 245, 206);
 }
-.margintop-20 {
-    margin-top: 20px;
-}
+
 .overall {
     justify-content: space-between;
     display: flex;
