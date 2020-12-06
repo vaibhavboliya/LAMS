@@ -7,6 +7,7 @@ use Illuminate\Contracts\Session\Session as SessionAlias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class StudentDashboard extends Controller
 {

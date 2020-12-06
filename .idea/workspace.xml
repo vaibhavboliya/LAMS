@@ -26,52 +26,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Admin controller">
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/AA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/ACN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/ADBMS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/AM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/AOA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/AOS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/BCE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/BEE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/CG.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/CN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/COA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/CS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/CSS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/DBMS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/DLDA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/DM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/DS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/DWM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/ECCF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/ED.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/EM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/ERP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/EVS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/JAVA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/ML.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/MP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/OS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/SE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/SPA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/SPCC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/TCS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/WT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/chemistry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/multimedia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/physics.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/CMPN/python.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Dashboard Bug Fix">
+      <change afterPath="$PROJECT_DIR$/resources/views/ClassAttendance.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherDashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherDashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/CN.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/DBMS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/MP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/WT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/DashboardStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/DashboardStudent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +43,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -250,7 +218,8 @@
       <workItem from="1607141237021" duration="7240000" />
       <workItem from="1607148776612" duration="1087000" />
       <workItem from="1607165256451" duration="751000" />
-      <workItem from="1607196500210" duration="6854000" />
+      <workItem from="1607196500210" duration="7089000" />
+      <workItem from="1607209318450" duration="5358000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1606331265423</created>
@@ -371,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607147044391</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Student Dashboard Bug Fix">
+      <created>1607204023713</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607204023713</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +389,8 @@
     <MESSAGE value="Teacher Dynamic" />
     <MESSAGE value="Admin" />
     <MESSAGE value="Admin controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin controller" />
+    <MESSAGE value="Student Dashboard Bug Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Student Dashboard Bug Fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606331422626">
@@ -458,14 +435,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607147068329">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607204060751">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607147068329" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607201542279">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607204060751" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607203973540">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607201542279" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607203973540" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1606985296070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

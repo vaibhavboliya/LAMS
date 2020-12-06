@@ -26,6 +26,9 @@
                     <a class="nav-link active" href={{route('Dashboard')}} >Dashboard</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#">Apply for Leave</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href={{route('profile')}}>Profile</a>
                 </li>
             </ul>
