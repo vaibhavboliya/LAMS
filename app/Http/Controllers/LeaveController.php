@@ -107,9 +107,10 @@ class LeaveController extends Controller
             $end[$i] = $application->end_date;
             $lid[$i] = $application->lid;
             $status[$i] = $application->status;
+            $i++;
         }
         $sid = array();
-
+        $i=0;
         foreach ($lid as $l)
         {
             $student_id = DB::table('apply')->select('Enrollment_id')->where('lid','=',$l)->get();
@@ -124,7 +125,9 @@ class LeaveController extends Controller
                 $name[$i] = $student_name;
             }
             $sid[$i] = $student_id;
+            $i++;
         }
+        //return $name;
         return View('viewLeave')->with('status',$status)->with('sid',$sid)->with('count',$count)->with('name',$name)->with('lid',$lid)->with('start',$start)->with('end',$end);
     }
     public function viewapplication(Request $request)

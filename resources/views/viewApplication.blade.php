@@ -89,9 +89,15 @@
                 </div>
                 <hr>
                 <div class="row justify-content-start mt-4">
-                    <div class="col">
+                    @if($proof != '')
+                    <div class="col-6">
                         <button class="btn btn-outline-primary"><a target="_blank" href={{$proof}}>View Proof</a></button>
                     </div>
+                    @else
+                        <div class="col-6">
+                        <td><span class="text-danger blockquote">No Doucment submitted</span></td>
+                        </div>
+                    @endif
                     <div class="col">
                         <form method="POST" action={{route('accept')}}>
                             @csrf
@@ -100,8 +106,8 @@
                         </form>
                     </div>
                     <div class="col">
-                        @csrf
                         <form method="POST" action={{route('reject')}}>
+                            @csrf
                             <input type="number" hidden  name="lid" value={{$lid}}>
                             <button type="submit" class="btn btn-outline-danger">Reject</button>
                         </form>

@@ -65,12 +65,12 @@
                                 @csrf
                                 <input type="number" name="lid" hidden readonly value={{$lid[$i]}}>
                                 <input type="text" name="sid" hidden readonly value={{$sid[$i]}}>
-                                <td><button type = "submit" class="btn btn-outline-danger text-black">View</button></td>
+                                <td><button type = "submit" class="btn btn-outline-primary text-black">View</button></td>
                             </form>
                         @elseif($status[$i]==2)
-                            <td>Rejected</td>
+                            <td><span class="text-danger">Rejected</span></td>
                         @else
-                            <td>Accepted</td>
+                            <td><span class="text-success">Accepted</span></td>
                         @endif
                     </tr>
                 @endfor

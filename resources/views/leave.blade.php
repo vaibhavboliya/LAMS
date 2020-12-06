@@ -64,11 +64,11 @@
                 <td>{{$end[$i]}}</td>
                 <td>
                     @if($status[$i] == 0)
-                        Waiting For Response
+                        <span class="text-warning">Waiting For Response</span>
                     @elseif($status[$i] == 1)
-                        Approved
+                        <span class="text-success">Approved</span>
                     @else
-                        Rejected
+                        <span class="text-danger">Rejected</span>
                     @endif
                 </td>
             @if($status[$i] == 0)
@@ -77,12 +77,12 @@
                 <input type="number" name="lid" hidden readonly value={{$leave_id[$i]}}>
                 <td><button type = "submit" class="btn btn-outline-danger ">Delete Application</button></td>
                 </form>
-            @elseif($status[$i]==1)
-                <form method="POST" action={{route('deleteleave')}} >
-                    @csrf
-                    <input type="number" name="lid" hidden readonly value={{$leave_id[$i]}}>
-                    <td><button type = "submit" class="btn btn-outline-primary">Cancle Leave</button></td>
-                </form>
+{{--            @elseif($status[$i]==1)--}}
+{{--                <form method="POST" action={{route('deleteleave')}} >--}}
+{{--                    @csrf--}}
+{{--                    <input type="number" name="lid" hidden readonly value={{$leave_id[$i]}}>--}}
+{{--                    <td><button type = "submit" class="btn btn-outline-primary">Cancle Leave</button></td>--}}
+{{--                </form>--}}
             @else
                 <td></td>
             @endif
