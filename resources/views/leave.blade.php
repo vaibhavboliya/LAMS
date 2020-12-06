@@ -41,7 +41,7 @@
 </div>
 <div class="container form bg-white">
 <div class="top-container ">
-    <a href={{route('leaveform')}}><button class="btn btn-success margintop-20">Apply For New Leave</button></a>
+    <a href={{route('leaveform')}}><button class="btn btn-success marginlt-20">Apply For New Leave</button></a>
 </div>
 <h3>Your Leave Applications</h3>
 <div class="middle-container">
@@ -75,13 +75,13 @@
                 <form method="POST" action={{route('deleteleave')}} >
                     @csrf
                 <input type="number" name="lid" hidden readonly value={{$leave_id[$i]}}>
-                <td><button type = "submit" class="btn btn-outline-danger text-white">Delete Application</button></td>
+                <td><button type = "submit" class="btn btn-outline-danger ">Delete Application</button></td>
                 </form>
             @elseif($status[$i]==1)
                 <form method="POST" action={{route('deleteleave')}} >
                     @csrf
                     <input type="number" name="lid" hidden readonly value={{$leave_id[$i]}}>
-                    <td><button type = "submit" class="btn btn-outline-primary text-white">Cancle Leave</button></td>
+                    <td><button type = "submit" class="btn btn-outline-primary">Cancle Leave</button></td>
                 </form>
             @else
                 <td></td>
