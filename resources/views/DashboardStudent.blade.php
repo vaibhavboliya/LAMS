@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #4a5568;">
+<body style="background-color: #efefef;">
 <div>
     <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
         <a href={{route('welcome')}} class="navbar-brand">LAMS</a>
@@ -46,7 +46,7 @@
       <br>
     <div class="totalCard col-sm bold">
       <div>
-      <span style="font-size:3rem" class="total_count" id="tc">{{$count_t}}</span>
+      <span style="font-size:3rem" class="total_count count" id="tc">{{$count_t}}</span>
     </div>
     <div>
       Total Lectures
@@ -55,7 +55,7 @@
       <br>
     <div class=" totalCard col-sm bold">
       <div>
-      <span style="font-size:3rem"class="attended_count" id="ac">
+      <span style="font-size:3rem"class="attended_count count" id="ac">
           {{$count_a}}
     </span>
     </div>
@@ -82,30 +82,31 @@
 @for ($i = 0; $i < $count; $i++)
     <div class="fluid-container topcontainer" id={{$i}}>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2 marginright-20">
                 <div style='padding-top:5rem;display:flex;justify-content:center;align-items:center' class="container">
                     <img class="Subject_img" width="100px" src="/images/{{$dept}}/{{$values[$i]['subject_name']}}.png" alt={{$values[$i]['subject_name']}}>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="details-container">
-                    <h3 class="subject_names" id={{"subject_name".$i}}>{{$values[$i]['subject_name']}}</h3>
+            <div class="col-sm-3 details-container ">
+                <div class="">
+                    <h3 class="subject_names centertext" id={{"subject_name".$i}}>{{$values[$i]['subject_name']}}</h3>
                     <h5 class="faculty_names" id={{"faculty_name".$i}}>{{$values[$i]['faculty_name']}}</h5>
-                    <a id={{"faculty_email".$i}} class="text-dark" href="mailto::{{$values[$i]['faculty_email']}}">{{$values[$i]['faculty_email']}}</a>
-                    <h5 class="attended_lectures" id={{"attended_lectures".$i}}>Number of Lectures Attended : {{$values[$i]['attended_count']}}</h5>
-                    <h5 class="total_lectures" id={{"total_lectures".$i}}><span>Total Number of Lectures : </span><span>{{$values[$i]['total_count']}}</span></h5>
-                    <h6 class="Status" id={{"status".$i}}>
+                    <a id={{"faculty_email".$i}} class="text-primary" href="mailto::{{$values[$i]['faculty_email']}}">{{$values[$i]['faculty_email']}}</a>
+                    <h5 class="attended_lectures" id={{"attended_lectures".$i}}>Lectures Attended : {{$values[$i]['attended_count']}}</h5>
+                    <h5 class="total_lectures" id={{"total_lectures".$i}}><span>Total Lectures : </span><span class="">{{$values[$i]['total_count']}}</span></h5>
+                    <div class="Status" id={{"status".$i}}>
+                        
                         @if($values[$i]['total_count'] != 0)
                         @if(($values[$i]['attended_count']/$values[$i]['total_count'])*100 < 60)
-                            <h2><span class='text-danger'>{{"Poor"}}</span></h2>
+                            <h4><span>Status : </span><span class='text-danger'>{{"Poor"}}</span></h4>
                         @else
-                            <h2><span class='text-primary'>{{"Good"}}</span></h2>
+                            <h4><span>Status : </span><span class='text-success'>{{"Good"}}</span></h4>
                         @endif
                         @else
-                            <h2><span class='text-warning'>{{"No Remarks"}}</span></h2>
+                            <h4><span>Status : </span><span class='text-warning'>{{"No Remarks"}}</span></h4>
                             @endif
 
-                    </h6>
+                    </div>
                 </div>
             </div>
 {{--            TODO : previous 4 attendance in the table--}}
