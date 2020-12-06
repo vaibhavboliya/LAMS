@@ -10,7 +10,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  
 </head>
 <body>
     <div>
@@ -24,7 +23,7 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a href={{route('Dashboard')}} class="nav-link active">Dashboard</a>
+                        <a active class="nav-link  href={{route('Dashboard')}} ">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a href="/notexists" class="nav-link">Profile</a>
@@ -36,14 +35,6 @@
             </div>
         </nav>
     </div>
-    
-
-
-
-
-
-
-
     <div id="wrapper">
 
       <aside id="sidebar-wrapper">
@@ -62,9 +53,9 @@
           </li>
         </ul>
       </aside>
-    
-     
-    
+
+
+
       <section id="content-wrapper">
         <div class="row">
           <div class="container">
@@ -96,7 +87,7 @@
         </div>
         </div>
       </section>
-    
+
     </div>
 
 

@@ -117,8 +117,38 @@ class StudentDashboard extends Controller
             $count_a = $count_a + $data['attended_count'];
             $count_t = $count_t + $data['total_count'];
         }
+        $table_datas = array();
+        $count_val = array();
+        $j = 0;
+        foreach($teaches as $teach)
+        {
+            $tdata = array();
+            $data = DB::table('attends')->select('*')->where('teaches_id','=',$teach)->orderByDesc('date_of_lecture')->take(4)->get();
+            $k = 0;
+            $count = 0;
+            foreach ($data as $d)
+            {
+                $count++;
+                $table_data = array();
+                $table_data["date_of_lecture"] = $d->date_of_lecture;
+                $table_data["time_of_lecture"] = $d->time_of_lecture;
+                if(in_array($student_details[0],explode(',',$d->attended_rno)))
+                {
+                    $table_data["status"] = "present";
+                }
+                else
+                {
+                    $table_data["status"] = "absent";
+                }
+                $tdata[$k] = $table_data;
+                $k++;
+            }
+            $count_val[$j] = $count;
+            $table_datas[$j] = $tdata;
+            $j++;
+        }
+    return View('DashboardStudent')->with('count_val',$count_val)->with('table_datas',$table_datas)->with('dept',$student_details[3])->with( ['count_t' => $count_t])->with( ['count_a' => $count_a])->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
 
-    return View('DashboardStudent')->with('dept',$student_details[3])->with( ['count_t' => $count_t])->with( ['count_a' => $count_a])->with( ['values' => $attended_lectures])->with( ['count' => count($attended_lectures)]);
     }
     public function profile()
     {

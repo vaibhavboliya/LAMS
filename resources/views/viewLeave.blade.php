@@ -30,7 +30,7 @@
                     <a class="nav-link active" href={{route('viewLeave')}}>Leave Applications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href={{route('profile')}}>Profile</a>
+                    <a class="nav-link" href=#>Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">

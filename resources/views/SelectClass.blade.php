@@ -15,7 +15,7 @@
 <body>
 <div>
     <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">LAMS</a>
+        <a href={{route('welcome')}} class="navbar-brand">LAMS</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>

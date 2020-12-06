@@ -95,7 +95,7 @@
                     <h5 class="attended_lectures" id={{"attended_lectures".$i}}>Lectures Attended : {{$values[$i]['attended_count']}}</h5>
                     <h5 class="total_lectures" id={{"total_lectures".$i}}><span>Total Lectures : </span><span class="">{{$values[$i]['total_count']}}</span></h5>
                     <div class="Status" id={{"status".$i}}>
-                        
+
                         @if($values[$i]['total_count'] != 0)
                         @if(($values[$i]['attended_count']/$values[$i]['total_count'])*100 < 60)
                             <h4><span>Status : </span><span class='text-danger'>{{"Poor"}}</span></h4>
@@ -112,7 +112,7 @@
 {{--            TODO : previous 4 attendance in the table--}}
             <div class="col-sm-3 datatable">
                 <div class="previous-four-records table-responsive-sm ">
-                    @if($values[$i]['total_count'] < 4)
+                    @if($values[$i]['total_count'] == 0)
                         <h3 style="margin-top: 3em">{{"Data is not sufficient"}}</h3>
                     @else
                         <table class="table table-striped">
@@ -122,26 +122,19 @@
                             <th scope="col">status</th>
                             </thead>
                             <tbody>
+
+                                @for($j=0;$j<$count_val[$i];$j++)
+                                @if($table_datas[$i][$j]['status']=="present")
                             <tr class="table-success">
-                                <td>24/09/2020</td>
-                                <td>1:00 pm</td>
-                                <td>Present</td>
+                                @else
+                                    <tr class="table-danger">
+                                        @endif
+
+                                <td>{{$table_datas[$i][$j]["date_of_lecture"]}}</td>
+                                <td>{{$table_datas[$i][$j]["time_of_lecture"]}}</td>
+                                <td>{{$table_datas[$i][$j]["status"]}}</td>
                             </tr>
-                            <tr class="table-danger">
-                                <td>23/09/2020</td>
-                                <td>12:00 pm</td>
-                                <td>Absent</td>
-                            </tr>
-                            <tr class="table-success">
-                                <td>22/09/2020</td>
-                                <td>2:00 pm</td>
-                                <td>Present</td>
-                            </tr>
-                            <tr class="table-danger">
-                                <td>21/09/2020</td>
-                                <td>3:00 pm</td>
-                                <td>Absent</td>
-                            </tr>
+                                    @endfor
                             </tbody>
                         </table>
                     @endif

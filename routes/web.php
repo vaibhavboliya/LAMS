@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-
 Auth::routes(['verify' => true]);
-
 Route::get('/home', function () {
     switch(\Illuminate\Support\Facades\Auth::user()->is_teacher){
         case '0':
@@ -61,7 +59,5 @@ Route::get('/home/admin', [App\Http\Controllers\AdminController::class, 'index']
 Route::get('/admin/user/{email}', [App\Http\Controllers\AdminController::class, 'viewuser'])->name('admin.viewuser')->middleware('verified');
 Route::post('/admin/user/update', [App\Http\Controllers\AdminController::class, 'edituser'])->name('edituser')->middleware('verified');
 Route::get('/admin/user/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteuser'])->name('deleteuser')->middleware('verified');
-
-
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('revalidate');;
 
