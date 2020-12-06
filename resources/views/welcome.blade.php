@@ -33,8 +33,16 @@
             <br><br><br><br><br><br><br><br><br>
             <h1>Leave and Attendance Management System</h1>
             @auth
+                @if(0 == Auth::user()->is_teacher)
                 <a style="border: none; outline: none;" href={{route('Dashboard')}}><button type="button" id="home" class="btn btn-primary">Dashboard</button></a>
                 <a style="border: none; outline: none; margin-left: 2rem;" href={{route('logout')}}><button type="button" id="home" class="btn btn-primary">Logout</button></a>
+                @elseif(Auth::user()->is_teacher == 1)
+                    <a style="border: none; outline: none;" href={{route('TeacherDashboard')}}><button type="button" id="home" class="btn btn-primary">Dashboard</button></a>
+                    <a style="border: none; outline: none; margin-left: 2rem;" href={{route('logout')}}><button type="button" id="home" class="btn btn-primary">Logout</button></a>
+                @else
+                    <a style="border: none; outline: none;" href={{route('home.admin')}}><button type="button" id="home" class="btn btn-primary">Dashboard</button></a>
+                    <a style="border: none; outline: none; margin-left: 2rem;" href={{route('logout')}}><button type="button" id="home" class="btn btn-primary">Logout</button></a>
+                @endif
             @else
                 <a style="border: none; outline: none;" href={{route('login')}}><button type="button" id="home" class="btn btn-primary">Login/Register</button></a>
             @endauth

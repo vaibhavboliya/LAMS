@@ -27,13 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Dashboard Bug Fix">
-      <change afterPath="$PROJECT_DIR$/resources/views/ClassAttendance.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/DashboardStudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/DashboardStudent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +214,7 @@
       <workItem from="1607148776612" duration="1087000" />
       <workItem from="1607165256451" duration="751000" />
       <workItem from="1607196500210" duration="7089000" />
-      <workItem from="1607209318450" duration="5358000" />
+      <workItem from="1607209318450" duration="6310000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1606331265423</created>
@@ -347,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607204023713</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Student Dashboard Bug Fix">
+      <created>1607214898953</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607214898954</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
