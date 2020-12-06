@@ -39,8 +39,8 @@
         </div>
     </nav>
 </div>
-<div class="container form bg-white">
-<div class="top-container ">
+<div class="container form bg-white box-height">
+<div class="">
     <a href={{route('leaveform')}}><button class="btn btn-success marginlt-20">Apply For New Leave</button></a>
 </div>
 <h3>Your Leave Applications</h3>
