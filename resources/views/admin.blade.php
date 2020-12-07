@@ -23,7 +23,7 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a active class="nav-link  href={{route('Dashboard')}} ">Dashboard</a>
+                      <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a href="/notexists" class="nav-link">Profile</a>
@@ -53,6 +53,9 @@
           </li>
           <li>
             <a href="#"><i class="fa fa-user"></i>Teachers</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-users"></i>Student</a>
