@@ -109,19 +109,70 @@ class AdminController extends Controller
         }
     }
     public function class(){
-        return View('admin.adminclass');
-    }
+        if(Auth::user()->is_teacher == 2) {
+            return View('admin.adminclass');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+
+        }
     public function subject(){
-        return View('admin.adminsubject');
+        if(Auth::user()->is_teacher == 2) {
+            return View('admin.adminsubject');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+            {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
     }
     public function teacher(){
-        return View('admin.adminteacher');
+        if(Auth::user()->is_teacher == 2) {
+            return View('admin.adminteacher');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
     }
     public function teaches(){
-        return View('admin.adminteaches');
+        if(Auth::user()->is_teacher == 2) {
+            return View('admin.adminteaches');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
     }
     public function student(){
-        return View('admin.adminstudent');
+        if(Auth::user()->is_teacher == 2) {
+            return View('admin.adminstudent');
+        }
+    elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
     }
 
 }
