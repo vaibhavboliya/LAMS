@@ -10,36 +10,17 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ 
 </head>
-<body>
+<body style="background-color: #efefef">
     <div>
-        <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
-          <div class="navbar-header">
-            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
-          </div>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                      <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/notexists" class="nav-link">Profile</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
+        
     </div>
-    <div id="wrapper">
+    <div id="wrapper" >
 
       <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-          <h2>Logo</h2>
+          <h2>LAMS</h2>
         </div>
         <ul class="sidebar-nav">
           <li>
@@ -62,17 +43,96 @@
           </li>
         </ul>
       </aside>
+      <div id="navbar-wrapper">
+        <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+          </div>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                      <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/notexists" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+      </div>
 
 
 
-      <section id="content-wrapper">
-        <div >
-         <div  class="d-flex  justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center align-item-center">
-           Hello
+      <section  id="content-wrapper">
+        <div class="row justify-content-center">
+          
+          <div style="margin-top: 5%; padding: 10px 20px; border: 1px solid rgba(231, 161, 9, 0.5); background-color:white" class="col-12 col-md-8 col-lg-8 col-xl-6">
+            <form action="" method="post">
+              <div class="row">
+                  <div class="col">
+                    <h3>Add Subject</h3>
+                    <hr>
+                  </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col mt-4">
+                    <label for="start-date">Subject Name</label>
+                </div>
+                <div class="col mt-4">
+                    <input required type="text" class="form-control"  name="subjectname">
+                </div>
+              </div>
+                <div class="row align-items-center">
+                  <div class="col mt-4">
+                      <label for="end-date">year</label>
+                  </div>
+                  <div class="col mt-4">
+                      <input required type="number" class="form-control"  name="endtext" >
+                  </div>
+              </div>
+                <div class="row align-items-center">
+                  <div class="col mt-4">
+                      <label for="end-text">Department</label>
+                  </div>
+                  <div class="col mt-4">
+                      <input required type="text" class="form-control"  name="endtext" >
+                  </div>
+              </div>
+                <div class="row align-items-center">
+                  <div class="col mt-4">
+                      <label for="end-text">Semester</label>
+                  </div>
+                  <div class="col mt-4">
+                      <input required type="number" class="form-control"  name="endtext" >
+                  </div>
+              </div>
+              <div  style="margin-bottom: 10px" class="row justify-content-start mt-4">
 
-           </div>
-         </div>
+                <div class="col-6">
+                  
+                    
+                      <button type="submit" class="btn btn-success">ADD</button>
+                </div>
+                <div class="col-4">
+                  
+                      
+                      <button type="button" class="btn btn-warning">Cancel</button>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </form>
+          </div>
         </div>
+        
+
+   
       </section>
 
     </div>
