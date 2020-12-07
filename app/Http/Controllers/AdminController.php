@@ -110,7 +110,25 @@ class AdminController extends Controller
     }
     public function class(){
         if(Auth::user()->is_teacher == 2) {
-            return View('admin.adminclass');
+            $class_id = array();
+            $class_name = array();
+            $capacity = array();
+            $year = array();
+            $teacher_id = array();
+            $i = 0;
+            $data = DB::table('class')->select('*');
+            $count = 0;
+            foreach ( $data as $d ) {
+                $count++;
+                $class_id[$i] = $d->class_id;
+                $class_name[$i] = $d->class_name;
+                $capacity[$i] = $d->capacity;
+                $year[$i] = $d->year;
+                $teacher_id[$i] = $d->teacher_id;
+            }
+            return View('admin.adminclass')
+                ->with('class_id',$class_id)->with('year',$year)->with('teacher_id',$teacher_id)
+                ->with('class_name',$class_name)->with('capacity',$capacity);
         }
         elseif (Auth::user()->is_teacher == 1)
         {

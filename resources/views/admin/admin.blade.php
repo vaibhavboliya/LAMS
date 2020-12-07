@@ -20,22 +20,22 @@
       </div>
       <ul class="sidebar-nav">
         <li class="active">
-          <a href="#"><i class="fa fa-home"></i>Home</a>
+          <a href={{route('home.admin')}}><i class="fa fa-home"></i>Home</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-building"></i>Class</a>
+          <a href={{route('admin.class')}}><i class="fa fa-building"></i>Class</a>
         </li>
         <li >
-          <a href="#"><i class="fa fa-book"></i>Subject</a>
+          <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-user"></i>Teachers</a>
+          <a href={{route('admin.teacher')}}><i class="fa fa-user"></i>Teachers</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
+          <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-users"></i>Student</a>
+          <a href={{route('admin.student')}}><i class="fa fa-users"></i>Student</a>
         </li>
       </ul>
     </aside>
@@ -48,14 +48,6 @@
               <span class="navbar-toggler-icon"></span>
           </button>
           <div id="navbarCollapse" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                  <li class="nav-item">
-                    <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/notexists" class="nav-link">Profile</a>
-                  </li>
-              </ul>
               <ul class="nav navbar-nav ml-auto">
                   <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
               </ul>

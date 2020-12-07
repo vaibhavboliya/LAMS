@@ -18,26 +18,26 @@
       <div class="sidebar-brand">
         <h2>LAMS</h2>
       </div>
-      <ul class="sidebar-nav">
-        <li>
-          <a href="#"><i class="fa fa-home"></i>Home</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-building"></i>Class</a>
-        </li>
-        <li >
-          <a href="#"><i class="fa fa-book"></i>Subject</a>
-        </li>
-        <li class="active">
-          <a href="#"><i class="fa fa-user"></i>Teachers</a>
-        </li>
-        <li >
-          <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-users"></i>Student</a>
-        </li>
-      </ul>
+        <ul class="sidebar-nav">
+            <li>
+                <a href={{route('home.admin')}}><i class="fa fa-home"></i>Home</a>
+            </li>
+            <li>
+                <a href={{route('admin.class')}}><i class="fa fa-building"></i>Class</a>
+            </li>
+            <li  >
+                <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
+            </li>
+            <li class="active">
+                <a href={{route('admin.teacher')}}><i class="fa fa-user"></i>Teachers</a>
+            </li>
+            <li>
+                <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
+            </li>
+            <li>
+                <a href={{route('admin.student')}}><i class="fa fa-users"></i>Student</a>
+            </li>
+        </ul>
     </aside>
     <div id="navbar-wrapper">
       <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -48,28 +48,20 @@
               <span class="navbar-toggler-icon"></span>
           </button>
           <div id="navbarCollapse" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                  <li class="nav-item">
-                    <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/notexists" class="nav-link">Profile</a>
-                  </li>
-              </ul>
               <ul class="nav navbar-nav ml-auto">
                   <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
               </ul>
           </div>
       </nav>
     </div>
- 
+
 
 
 
     <section id="content-wrapper">
       <div class="row">
         <div class="container">
-          <h3 style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="title">Manage Teachers</h3>    
+          <h3 style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="title">Manage Teachers</h3>
                 <table class="table table-striped table-hover">
               <thead>
                 <tr>
