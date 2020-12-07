@@ -9,3 +9,15 @@
     width: 50%;
     margin-left: 20%;
 }
+.profile
+{
+    padding-top: 10px;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #edf2f7;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 90vw;
+    margin-left: 10%;
+}

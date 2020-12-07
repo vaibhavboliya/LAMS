@@ -148,7 +148,21 @@ class StudentDashboard extends Controller
     public function profile()
     {
         if(Auth::user()->is_teacher == 0){
-        return View('profile');
+            $email = Auth::user()->email;
+            $student_data = DB::table('student')->where('email','=',$email)->get();
+            foreach ($student_data as $student)
+            {
+                $firstname = $student->First_Name;
+                $middlename = $student->Middle_Name;
+                $lastname = $student->Last_Name;
+                $email = $student->Email;
+                $phone  = $student->Phone_Number_Student;
+                $sem = $student->semester;
+                $Department = $student->Department;
+                $id = $student->Enrollment_id;
+                $rollno = $student->Roll_No;
+            }
+        return View('Studentprofile')->with('rollno',$rollno)->with('id',$id)->with('department',$Department)->with('sem',$sem)->with('phone',$phone)->with('email',$email)->with('lastname',$lastname)->with('middlename',$middlename)->with('firstname',$firstname);
     }
     elseif (Auth::user()->is_teacher == 1)
     {
