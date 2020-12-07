@@ -27,15 +27,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $email = Auth::user()->email;
-        $count = DB::table('student')->where('Email','=',$email)->get()->count();
-        if ($count == 0)
+        if(Auth::user()->is_teacher == 0)
         {
-            return redirect()->route('StudentRegisteration');
+            $email = Auth::user()->email;
+            $count = DB::table('student')->where('Email', '=', $email)->get()->count();
+            if ($count == 0) {
+                return redirect()->route('StudentRegisteration');
+            } else {
+                return redirect()->route('welcome');
+            }
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
         }
         else
         {
-            return redirect()->route('welcome');
+            return redirect()->route('home.admin');
         }
     }
 }
