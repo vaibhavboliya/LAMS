@@ -63,14 +63,14 @@ Route::get('/Dashboard', function () {
     Route::post('/leaveformsubmit', 'App\Http\Controllers\LeaveController@leaveformsubmit')->name('leaveformsubmit')->middleware('auth')->middleware('revalidate');;
     Route::post('/deleteleave', 'App\Http\Controllers\LeaveController@deleteleave')->name('deleteleave')->middleware('auth')->middleware('revalidate');;
 // ====================================teacher routes===================================
-route::get('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'Dashboard'])->name('TeacherDashboard');
-route::post('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'mark'])->name('mark');
-Route::post('/submitattendance',[\App\Http\Controllers\TeacherDashboard::class,'submitattendance'])->name('submitattendance');
-Route::get('/home/teacher', [App\Http\Controllers\Teacher::class, 'index'])->name('home.teacher')->middleware('verified');
-Route::get('/viewLeave','App\Http\Controllers\LeaveController@viewleave')->name('viewLeave')->middleware('verified');
-Route::post('/viewapplication','App\Http\Controllers\LeaveController@viewapplication')->name('viewApplication')->middleware('verified');
-Route::post('/accept','App\Http\Controllers\LeaveController@accept')->name('accept')->middleware('verified');
-Route::post('/reject','App\Http\Controllers\LeaveController@reject')->name('reject')->middleware('verified');
+    route::get('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'Dashboard'])->name('TeacherDashboard');
+    route::post('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'mark'])->name('mark');
+    Route::post('/submitattendance',[\App\Http\Controllers\TeacherDashboard::class,'submitattendance'])->name('submitattendance');
+    Route::get('/home/teacher', [App\Http\Controllers\Teacher::class, 'index'])->name('home.teacher')->middleware('verified');
+    Route::get('/viewLeave','App\Http\Controllers\LeaveController@viewleave')->name('viewLeave')->middleware('verified');
+    Route::post('/viewapplication','App\Http\Controllers\LeaveController@viewapplication')->name('viewApplication')->middleware('verified');
+    Route::post('/accept','App\Http\Controllers\LeaveController@accept')->name('accept')->middleware('verified');
+    Route::post('/reject','App\Http\Controllers\LeaveController@reject')->name('reject')->middleware('verified');
 // ====================================Admin routes===================================
     Route::get('/home/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('home.admin')->middleware('verified');
     Route::get('/home/admin/class', [App\Http\Controllers\AdminController::class, 'class'])->name('admin.class')->middleware('verified');
@@ -82,4 +82,9 @@ Route::post('/reject','App\Http\Controllers\LeaveController@reject')->name('reje
     Route::post('/admin/user/update', [App\Http\Controllers\AdminController::class, 'edituser'])->name('edituser')->middleware('verified');
     Route::get('/admin/user/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteuser'])->name('deleteuser')->middleware('verified');
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('revalidate');;
-
+    Route::get('/home/admin/addclass', [App\Http\Controllers\AdminController::class, 'addclass'])->name('admin.addclass')->middleware('verified');
+    Route::post('/home/admin/deleteclass',[App\Http\Controllers\AdminController::class, 'deleteclass'])->name('admin.deleteclass')->middleware('verified');
+    Route::post('/home/admin/updateclass',[App\Http\Controllers\AdminController::class, 'updateclass'])->name('admin.updateclass')->middleware('verified');
+    Route::post('/home/admin/insertclass',[App\Http\Controllers\AdminController::class, 'insertclass'])->name('admin.insertclass')->middleware('verified');
+    Route::post('/home/admin/updatetableclass',[App\Http\Controllers\AdminController::class, 'updatetableclass'])->name('admin.updatetableclass')->middleware('verified');
+    Route::post('/home/admin/deletesubject',[App\Http\Controllers\AdminController::class, 'deletesubject'])->name('admin.deletesubject')->middleware('verified');

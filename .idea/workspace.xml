@@ -27,14 +27,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile">
+      <change afterPath="$PROJECT_DIR$/resources/views/updateclass.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/609e8ffa-a5b3-4ec1-adf9-4449f9c11927.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/609e8ffa-a5b3-4ec1-adf9-4449f9c11927/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/addsubject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/addsubject.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminstudent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminstudent.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminteacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminteacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +57,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -176,6 +185,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -233,7 +243,8 @@
       <workItem from="1607291286127" duration="644000" />
       <workItem from="1607298662526" duration="1159000" />
       <workItem from="1607324136431" duration="8508000" />
-      <workItem from="1607341032594" duration="4981000" />
+      <workItem from="1607341032594" duration="14216000" />
+      <workItem from="1607357624799" duration="2386000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1606331265423</created>
@@ -536,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607343170827</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Student Profile">
+      <created>1607347816138</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1607347816138</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,10 +613,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Student Profile" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607280288035">
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607353978005">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1607280288035" />
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1607353978005" />
     <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog" timestamp="1607299448694">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -637,10 +655,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607343175723">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607347855249">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607343175723" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607347855249" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607341174994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

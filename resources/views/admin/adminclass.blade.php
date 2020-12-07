@@ -62,9 +62,8 @@
       <div class="row">
         <div class="container">
           <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
-            <h3 style= "margin:10px 0; padding: 10px:" class="title col-10">Manage Class</h3>
-            <button type="button" class="btn btn-primary col-2">Add Class</button>
-
+            <h3  class="title col-10" style= "margin:10px 0; padding: 10px;">Manage Class</h3>
+              <a href={{route('admin.addclass')}}><button type="submit" class="btn btn-primary">Add Class</button></a>
           </div>
           {{-- <h3 style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="title">Manage Class</h3> --}}
           <table class="table table-striped table-hover">
@@ -80,15 +79,23 @@
               </thead>
               <tbody>
                 <tr>
-                     @for($i=0;$i<count($name);$i++)
+                     @for($i=0;$i<$count;$i++)
                   <th scope="row">{{$i+1}}</th>
                   <td>{{$class_id[$i]}}</td>
                   <td>{{$class_name[$i]}}</td>
                         <td>{{$capacity[$i]}}</td>
                         <td>{{$year[$i]}}</td>
                         <td>{{$teacher_id[$i]}}</td>
-                  <td><a href="/admin/user/{{$class_id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
-                    <td><a href="/admin/user/delete/{{$class_id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                        <form method="POST" action={{route('admin.updateclass')}}>
+                            @csrf
+                            <input  type="text" hidden   readonly name="class_id" value={{$class_id[$i]}} >
+                            <td><button type="submit" class="btn btn-success text-white">Update</button></td>
+                        </form>
+                        <form method="POST" action={{route('admin.deleteclass')}}>
+                            @csrf
+                            <input value={{$class_id[$i]}} type="text" name="class_id" hidden readonly >
+                            <td><button type="submit" class="btn btn-danger text-white">Delete</button></td>
+                        </form>
                 </tr>
                  @endfor
               </tbody>

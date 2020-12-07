@@ -129,10 +129,8 @@
         <div class="row">
           <div class="container">
             <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
-              <h3 style= "margin:10px 0; padding: 10px:" class="title col-10">Manage Subjects</h3>
-              <button type="button" class="btn btn-primary col-2">Add Subject</button>
-
-            </div>
+              <h3 style= "margin:10px 0; padding: 10px;" class="title col-10">Manage Subjects</h3>
+           </div>
             <table class="table table-striped table-hover">
                 <thead>
                   <tr>
@@ -147,16 +145,20 @@
                 </thead>
                 <tbody>
                   <tr>
-                      {{-- @for($i=0;$i<count($name);$i++) --}}
-                    <th scope="row">{.i+1}}</th>
-                    <td>{.name[$i]}}</td>
-                    <td>{.email[$i]}}</td>
-                      <td>{.role[$i]}}</td>
-                      <td>{.role[$i]}}</td>
-                    <td><a href="/admin/user/{.id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
-                      <td><a href="/admin/user/delete/{.id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                       @for($i=0;$i<$count;$i++)
+                    <th scope="row">{{$i+1}}</th>
+                          <td>{{$subject_id[$i]}}</td>
+                    <td>{{$subject_name[$i]}}</td>
+                    <td>{{$year[$i]}}</td>
+                      <td>{{$department[$i]}}</td>
+                      <td>{{$semester[$i]}}</td>
+                          <form method="POST" action={{route('admin.deletesubject')}}>
+                              @csrf
+                              <input value={{$subject_id[$i]}} type="text" name="subject_id" hidden readonly >
+                              <td><button type="submit" class="btn btn-danger text-white">Delete</button></td>
+                          </form>
                   </tr>
-                  {{-- @endfor --}}
+                   @endfor
                 </tbody>
               </table>
         </div>

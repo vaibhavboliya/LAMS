@@ -20,8 +20,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
                 </ul>
@@ -29,41 +27,45 @@
         </nav>
     </div>
     <div class="centerbox">
-        <form action={{route('edituser')}} method="POST" class="atform">
+        <form action={{route('admin.insertclass')}} method="POST" class="atform">
             @csrf
             <div class="box">
-
                 <div class = "container-fluid ">
-                    <h3> Edit <span>{{$email}} </span> </h3>
+                    <h3>Add Class</h3>
                     <hr>
-                    <input type="email" name="email" hidden readonly value="{{$email}}">
                     <div class="form-row ">
-
                         <div class="form-group lecture-date">
-                            <label class= "lecture">Name</label>
-
-                        <input style="width: 350px" name="name" class="form-control" value="{{$name}}" >
+                            <label class= "Class Name">Class Name</label>
+                        <input style="width: 350px" name="name" class="form-control">
                         </div>
-
                     </div>
                     <hr>
                     <div class="form-group lecture-date">
-                        <label class= "lecture">Role</label>
-                        <input style="width: 350px" name="role" class="form-control" value="{{$role}}" >
+                        <label class= "lecture">Year</label>
+                        <input style="width: 350px" type="number" name="year" class="form-control">
                     </div>
-
+                    <hr>
+                    <div class="form-group lecture-date">
+                        <label class= "lecture">Capacity</label>
+                        <input style="width: 350px" type="number" name="capacity" class="form-control">
+                    </div>
+                    <hr>
+                    <div class="form-group lecture-date">
+                        <label class= "">Class Teacher</label>
+                        <select class="form-control" style="width: 350px" name="teacher_id">
+                            @for($i=0;$i<$count;$i++)
+                            <option value={{$id[$i]}}>{{$name[$i]}}</option>
+                            @endfor
+                        </select>
+                    </div>
+                    <hr>
                     <div class="col-md-auto">
-                    <td><input style="margin-left:10%; margin-right: 30%" type="submit" class="btn btn-success text-white"></td>
-                    <td><a type="button" class="btn btn-warning text-white" href={{route('home.admin')}} >cancel</a></td>
+                    <input style="margin-left:10%; margin-right: 30%" type="submit" class="btn btn-success text-white">
+                    <a type="button" class="btn btn-warning text-white" href={{route('admin.class')}} >cancel</a>
                 </div>
                 </div>
             </div>
-        </form>
-            </div>
-
         </form>
     </div>
-
-
 </body>
 </html>
