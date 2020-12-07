@@ -8,6 +8,16 @@ class Teacher extends Controller
 {
     function index()
     {
-        return redirect(route('TeacherDashboard'));
+        if (Auth::user()->is_teacher == 1) {
+            return redirect(route('TeacherDashboard'));
+        }
+        elseif (Auth::user()->is_teacher == 0)
+        {
+            return redirect()->route('Dashboard');
+        }
+        else
+        {
+            return redirect()->route('home.admin');
+        }
     }
 }

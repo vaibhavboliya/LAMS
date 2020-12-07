@@ -8,30 +8,38 @@ use Illuminate\Support\Facades\DB;
 
 class TeacherDashboard extends Controller
 {
+
     public function Dashboard()
     {
-        $email = Auth::user()->email;
-        $class_data = array();
-        $teacher = DB::table('teacher')->select('*')->where('Email','=',$email)->get();
-        foreach($teacher as $teach)
-        {
-            $teacher_id = $teach->teacher_id;
-        }
-        $teaches = DB::table('teaches')->select('*')->where('teacher_id','=',$teacher_id)->get();
-        $i = 0;
-        foreach ($teaches as $teach)
-        {
-            $class = DB::table('class')->select('*')->where('class_id','=',$teach->class_id)->get();
-            foreach($class as $c)
-            {
-                $class_data[$i] = $c->class_name;
+        if(Auth::user()->is_teacher == 1) {
+            $email = Auth::user()->email;
+            $class_data = array();
+            $teacher = DB::table('teacher')->select('*')->where('Email', '=', $email)->get();
+            foreach ( $teacher as $teach ) {
+                $teacher_id = $teach->teacher_id;
             }
-            $i++;
+            $teaches = DB::table('teaches')->select('*')->where('teacher_id', '=', $teacher_id)->get();
+            $i = 0;
+            foreach ( $teaches as $teach ) {
+                $class = DB::table('class')->select('*')->where('class_id', '=', $teach->class_id)->get();
+                foreach ( $class as $c ) {
+                    $class_data[$i] = $c->class_name;
+                }
+                $i++;
+            }
+            return View('SelectClass')->with('classData', $class_data);
         }
-        return View('SelectClass')->with('classData',$class_data);
+        elseif (Auth::user()->is_teacher == 0)
+        {
+            return redirect()->route('Dashbaord');
+        }
+        else{
+            return redirect()->route('home.admin');
+        }
     }
     public function mark(Request $req)
     {
+        if(Auth::user()->is_teacher == 1) {
         $email = Auth::user()->email;
         $class_name = $req->class;
         $date = $req->lect_date;
@@ -75,10 +83,20 @@ class TeacherDashboard extends Controller
             $student_r[$i] = $student->Roll_No;
             $i++;
         }
+
         return View('MarkAttendance')->with('teaches_id',$teaches_id)->with('class_id',$class_id)->with('subject',$subject_name)->with('count',$count)->with('student_r',$student_r)->with('student_l',$student_l)->with('student_f',$student_f)->with('class_name',$class_name)->with('time',$time)->with('date',$date);
+    }
+    elseif (Auth::user()->is_teacher == 0)
+    {
+        return redirect()->route('Dashbaord');
+    }
+    else{
+        return redirect()->route('home.admin');
+    }
     }
     public function submitattendance(Request $req)
     {
+        if(Auth::user()->is_teacher == 1) {
         $teaches_id = $req->teaches_id;
         $subject_name = $req->subject;
         $class_name = $req->class_name;
@@ -101,5 +119,13 @@ class TeacherDashboard extends Controller
         $attended = $attended."0";
         DB::insert('insert into attends values(?,?,?,?)',array($date,$time,$teaches_id,$attended));
         return redirect()->route('TeacherDashboard');
+        }
+        elseif (Auth::user()->is_teacher == 0)
+        {
+            return redirect()->route('Dashbaord');
+        }
+        else{
+            return redirect()->route('home.admin');
+        }
     }
 }
