@@ -12,56 +12,57 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>
-        <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
-          <div class="navbar-header">
-            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
-          </div>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                      <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/notexists" class="nav-link">Profile</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div id="wrapper">
+  <div id="wrapper" >
 
-      <aside id="sidebar-wrapper">
-        <div class="sidebar-brand">
-          <h2>Logo</h2>
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <h2>LAMS</h2>
+      </div>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#"><i class="fa fa-home"></i>Home</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-building"></i>Class</a>
+        </li>
+        <li class="active">
+          <a href="#"><i class="fa fa-book"></i>Subject</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-user"></i>Teachers</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-users"></i>Student</a>
+        </li>
+      </ul>
+    </aside>
+    <div id="navbar-wrapper">
+      <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
         </div>
-        <ul class="sidebar-nav">
-          <li >
-            <a href="#"><i class="fa fa-home"></i>Home</a>
-          </li>
-          <li class="active">
-            <a href="#"><i class="fa fa-building "></i>Class</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-book"></i>Subject</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-user"></i>Teachers</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-users"></i>Student</a>
-          </li>
-        </ul>
-      </aside>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item">
+                    <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/notexists" class="nav-link">Profile</a>
+                  </li>
+              </ul>
+              <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
+              </ul>
+          </div>
+      </nav>
+    </div>
+ 
 
 
 

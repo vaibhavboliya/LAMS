@@ -13,9 +13,7 @@
  
 </head>
 <body style="background-color: #efefef">
-    <div>
-        
-    </div>
+    
     <div id="wrapper" >
 
       <aside id="sidebar-wrapper">
@@ -66,6 +64,7 @@
             </div>
         </nav>
       </div>
+    
 
 
 
