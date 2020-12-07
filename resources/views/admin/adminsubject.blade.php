@@ -10,36 +10,36 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
- 
+
 </head>
 <body style="background-color: #efefef">
-    
+
     <div id="wrapper" >
 
       <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
           <h2>LAMS</h2>
         </div>
-        <ul class="sidebar-nav">
-          <li>
-            <a href="#"><i class="fa fa-home"></i>Home</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-building"></i>Class</a>
-          </li>
-          <li class="active">
-            <a href="#"><i class="fa fa-book"></i>Subject</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-user"></i>Teachers</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-users"></i>Student</a>
-          </li>
-        </ul>
+          <ul class="sidebar-nav">
+              <li>
+                  <a href={{route('home.admin')}}><i class="fa fa-home"></i>Home</a>
+              </li>
+              <li>
+                  <a href={{route('admin.class')}}><i class="fa fa-building"></i>Class</a>
+              </li>
+              <li  class="active">
+                  <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
+              </li>
+              <li >
+                  <a href={{route('admin.teacher')}}><i class="fa fa-user"></i>Teachers</a>
+              </li>
+              <li>
+                  <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
+              </li>
+              <li>
+                  <a href={{route('admin.student')}}><i class="fa fa-users"></i>Student</a>
+              </li>
+          </ul>
       </aside>
       <div id="navbar-wrapper">
         <nav style="position: sticky;" class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -50,27 +50,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                      <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/notexists" class="nav-link">Profile</a>
-                    </li>
-                </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
                 </ul>
             </div>
         </nav>
       </div>
-    
+
 
 
 
       {{-- <section  id="content-wrapper">
         <div class="row justify-content-center">
-          
+
           <div style="margin-top: 5%; padding: 10px 20px; border: 1px solid rgba(231, 161, 9, 0.5); background-color:white" class="col-12 col-md-8 col-lg-8 col-xl-6">
             <form action="" method="post">
               <div class="row">
@@ -114,13 +106,13 @@
               <div  style="margin-bottom: 10px" class="row justify-content-start mt-4">
 
                 <div class="col-6">
-                  
-                    
+
+
                       <button type="submit" class="btn btn-success">ADD</button>
                 </div>
                 <div class="col-4">
-                  
-                      
+
+
                       <button type="button" class="btn btn-warning">Cancel</button>
                 </div>
                 <hr>
@@ -129,9 +121,9 @@
           </form>
           </div>
         </div>
-        
 
-   
+
+
       </section> --}}
       <section id="content-wrapper">
         <div class="row">
