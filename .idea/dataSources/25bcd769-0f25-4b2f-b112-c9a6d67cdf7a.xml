@@ -1120,6 +1120,7 @@ teaches_id</ColNames>
       <Position>1</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="352" parent="326" name="class_name">
       <Position>2</Position>

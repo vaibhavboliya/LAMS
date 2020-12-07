@@ -108,41 +108,31 @@ class AdminController extends Controller
             return redirect()->route('Dashboard');
         }
     }
-    public function class(){
-        if(Auth::user()->is_teacher == 2) {
-            $class_id = array();
-            $class_name = array();
-            $capacity = array();
-            $year = array();
-            $teacher_id = array();
-            $i = 0;
-            $data = DB::table('class')->select('*');
-            $count = 0;
-            foreach ( $data as $d ) {
-                $count++;
-                $class_id[$i] = $d->class_id;
-                $class_name[$i] = $d->class_name;
-                $capacity[$i] = $d->capacity;
-                $year[$i] = $d->year;
-                $teacher_id[$i] = $d->teacher_id;
-            }
-            return View('admin.adminclass')
-                ->with('class_id',$class_id)->with('year',$year)->with('teacher_id',$teacher_id)
-                ->with('class_name',$class_name)->with('capacity',$capacity);
-        }
-        elseif (Auth::user()->is_teacher == 1)
-        {
-            return redirect()->route('TeacherDashboard');
-        }
-        else
-        {
-            return redirect()->route('Dashboard');
-        }
 
-        }
     public function subject(){
         if(Auth::user()->is_teacher == 2) {
-            return View('admin.adminsubject');
+
+            $data = DB::table('subject')->select('*')->get();
+            $subject_id = array();
+            $subject_name = array();
+            $year = array();
+            $department = array();
+            $semester = array();
+            $i = 0;
+            foreach($data as $d)
+            {
+                $subject_id[$i] = $d->subject_id;
+                $subject_name[$i] = $d->subject_name;
+                $year[$i] = $d->year;
+                $department[$i] = $d->Department;
+                $semester[$i] = $d->semester;
+                $i++;
+            }
+            return View('admin.adminsubject')
+                ->with('subject_id',$subject_id)
+                ->with('subject_name',$subject_name)->with('year',$year)
+                ->with('department',$department)->with('semester',$semester)
+                ->with('count',$i);
         }
         elseif (Auth::user()->is_teacher == 1)
             {
@@ -153,6 +143,23 @@ class AdminController extends Controller
             return redirect()->route('Dashboard');
         }
     }
+    public function deletesubject(Request $request)
+    {
+        if(Auth::user()->is_teacher == 2) {
+            $subject_id = $request->subject_id;
+            DB::delete('delete from subject where subject_id = ?', array($subject_id));
+            return redirect()->route('admin.subject');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+            {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+    }
+
     public function teacher(){
         if(Auth::user()->is_teacher == 2) {
             return View('admin.adminteacher');
@@ -188,6 +195,153 @@ class AdminController extends Controller
             return redirect()->route('TeacherDashboard');
         }
         else
+        {
+            return redirect()->route('Dashboard');
+        }
+    }
+
+//    Class Admin Controller
+    public function class(){
+        if(Auth::user()->is_teacher == 2) {
+            $class_id = array();
+            $class_name = array();
+            $capacity = array();
+            $year = array();
+            $teacher_id = array();
+            $i = 0;
+            $data = DB::table('class')->select('*')->get();
+            $count = 0;
+            foreach ( $data as $d ) {
+                $count++;
+                $class_id[$i] = $d->class_id;
+                $class_name[$i] = $d->class_name;
+                $capacity[$i] = $d->capacity;
+                $year[$i] = $d->year;
+                $teacher_id[$i] = $d->teacher_id;
+                $i++;
+            }
+
+            return View('admin.adminclass')->with('count',$count)
+                ->with('class_id',$class_id)->with('year',$year)->with('teacher_id',$teacher_id)
+                ->with('class_name',$class_name)->with('capacity',$capacity);
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+
+    }
+    public function addclass(){
+        if(Auth::user()->is_teacher == 2) {
+            $teacher_id = DB::table('teacher')->select('*')->get();
+            $id = array();
+            $name = array();
+            $i = 0;
+            foreach ($teacher_id as $d)
+            {
+                $id[$i] = $d->teacher_id;
+                $name[$i] = $d->teacher_name;
+                $i++;
+            }
+            return View('admin.addclass')->with('id',$id)->with('name',$name)->with('count',$i);
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+    }
+    public function deleteclass(Request $request)
+    {
+        if(Auth::user()->is_teacher == 2) {
+            $class_id = $request->class_id;
+            DB::delete('delete from class where class_id = ?',array($class_id));
+            return redirect()->route('admin.class');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+
+    }
+    public function updateclass(Request $request)
+    {
+        if(Auth::user()->is_teacher == 2) {
+            $class_id = $request->class_id;
+            $teacher_id = DB::table('teacher')->select('*')->get();
+            $id = array();
+            $name = array();
+            $i = 0;
+            foreach ($teacher_id as $d)
+            {
+                $id[$i] = $d->teacher_id;
+                $name[$i] = $d->teacher_name;
+                $i++;
+            }
+            $data = DB::table('class')->select('*')->where('class_id','=',$class_id)->get();
+            foreach ($data as $d)
+            {
+                $capacity = $d->capacity;
+                $year = $d->year;
+                $teacher_id = $d->teacher_id;
+                $class_name = $d->class_name;
+            }
+            return View('updateclass')->with('count',$i)->with('capacity',$capacity)
+                ->with('year',$year)
+                ->with('teacher_id',$teacher_id)
+                ->with('class_name',$class_name)->with('class_id',$class_id)->with('id',$id)->with('name',$name);
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+    }
+    public function insertclass(Request $request)
+    {
+        if(Auth::user()->is_teacher == 2) {
+        $class_name = $request->name;
+        $year = $request->year;
+        $teacher_id = $request->teacher_id;
+        $capacity = $request->capacity;
+        DB::insert('insert into class (class_name,capacity,year,teacher_id) values(?,?,?,?)',array($class_name,$capacity,$year,$teacher_id));
+        return redirect()->route('admin.class');
+    }
+    elseif (Auth::user()->is_teacher == 1)
+    {
+        return redirect()->route('TeacherDashboard');
+    }
+    else
+        {
+        return redirect()->route('Dashboard');
+    }
+    }
+    public function updatetableclass(Request $request)
+    {
+        if(Auth::user()->is_teacher == 2) {
+            DB::update('update class set class_name = ? , year = ? , capacity = ? ,teacher_id = ? where class_id = ?', array(
+                $request->name, $request->year, $request->capacity, $request->teacher_id, $request->class_id));
+            return redirect()->route('admin.class');
+        }
+    elseif (Auth::user()->is_teacher == 1)
+    {
+        return redirect()->route('TeacherDashboard');
+    }
+    else
         {
             return redirect()->route('Dashboard');
         }
