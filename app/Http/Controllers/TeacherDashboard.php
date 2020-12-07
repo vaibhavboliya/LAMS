@@ -31,7 +31,7 @@ class TeacherDashboard extends Controller
         }
         elseif (Auth::user()->is_teacher == 0)
         {
-            return redirect()->route('Dashbaord');
+            return redirect()->route('Dashboard');
         }
         else{
             return redirect()->route('home.admin');
@@ -88,7 +88,7 @@ class TeacherDashboard extends Controller
     }
     elseif (Auth::user()->is_teacher == 0)
     {
-        return redirect()->route('Dashbaord');
+        return redirect()->route('Dashboard');
     }
     else{
         return redirect()->route('home.admin');
@@ -122,7 +122,7 @@ class TeacherDashboard extends Controller
         }
         elseif (Auth::user()->is_teacher == 0)
         {
-            return redirect()->route('Dashbaord');
+            return redirect()->route('Dashboard');
         }
         else{
             return redirect()->route('home.admin');
