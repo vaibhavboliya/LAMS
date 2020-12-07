@@ -46,10 +46,16 @@
             <a href="#"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-plug"></i>Plugins</a>
+            <a href="#"><i class="fa fa-building"></i>Class</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-user"></i>Users</a>
+            <a href="#"><i class="fa fa-book"></i>Subject</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-user"></i>Teachers</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-users"></i>Student</a>
           </li>
         </ul>
       </aside>
