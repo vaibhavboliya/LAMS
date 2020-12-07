@@ -109,7 +109,6 @@
                     </div>
                 </div>
             </div>
-{{--            TODO : previous 4 attendance in the table--}}
             <div class="col-sm-3 datatable">
                 <div class="previous-four-records table-responsive-sm ">
                     @if($values[$i]['total_count'] == 0)

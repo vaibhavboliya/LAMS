@@ -10,6 +10,8 @@ class AdminController extends Controller
     //
     public function index()
     {
+        if(Auth::user()->is_teacher == 2)
+        {
         $user_data = DB::table('users')->select('*')->get();
         $user_id = array();
         $user_name = array();
@@ -30,13 +32,24 @@ class AdminController extends Controller
 //        // return $result;
 //        return View('userView');
     }
-    public function viewuser(Request $request) {
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
+    }
+    public function viewuser(Request $request)
+    {
+        if(Auth::user()->is_teacher == 1)
+        {
         $id = $request->route('email');
         $sqlQuery = "SELECT * FROM users where id=$id";
         $result = DB::select(DB::raw($sqlQuery));
         $i = 0;
-        foreach ($result as $user)
-        {
+        foreach ( $result as $user ) {
             $user_id = $user->id;
             $user_name = $user->name;
             $user_email = $user->email;
@@ -45,25 +58,55 @@ class AdminController extends Controller
         }
         // $user_data = DB::table('users')->select($id)->get();
         // return $result;
-        return View('userView')->with('id',$user_id)->with('name',$user_name)->with('email',$user_email)->with('role',$user_role);
-
+        return View('userView')->with('id', $user_id)->with('name', $user_name)->with('email', $user_email)->with('role', $user_role);
+    }
+    elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
 
     }
     public function edituser(Request $request)
     {
+        if(Auth::user()->is_teacher == 1)
+        {
         $email = $request->email;
         $name = $request->name;
         $role = $request->role;
         DB::update('update users set is_teacher = ? , name = ? where email = ?',array($role,$name,$email));
         return redirect()->route('home.admin');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
 
     }
     public function deleteuser(Request $request)
     {
+        if(Auth::user()->is_teacher == 2)
+        {
         $id = $request->route('id');
         $sqlQuery = "delete FROM users where id= ?";
         DB::delete($sqlQuery,array($id));
         return redirect()->route('home.admin');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+        {
+            return redirect()->route('TeacherDashboard');
+        }
+        else
+        {
+            return redirect()->route('Dashboard');
+        }
     }
 
 }
