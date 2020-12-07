@@ -26,7 +26,7 @@ class AdminController extends Controller
             $user_role[$i] = $user->is_teacher;
             $i++;
         }
-        return View('admin')->with('id',$user_id)->with('name',$user_name)->with('email',$user_email)->with('role',$user_role);
+        return View('admin.admin')->with('id',$user_id)->with('name',$user_name)->with('email',$user_email)->with('role',$user_role);
 //        $sqlQuery = "SELECT * FROM users";
 //        $result = DB::select(DB::raw($sqlQuery));
 //        // return $result;
@@ -58,7 +58,7 @@ class AdminController extends Controller
         }
         // $user_data = DB::table('users')->select($id)->get();
         // return $result;
-        return View('userView')->with('id', $user_id)->with('name', $user_name)->with('email', $user_email)->with('role', $user_role);
+        return View('admin.userView')->with('id', $user_id)->with('name', $user_name)->with('email', $user_email)->with('role', $user_role);
     }
     elseif (Auth::user()->is_teacher == 1)
         {
@@ -107,6 +107,21 @@ class AdminController extends Controller
         {
             return redirect()->route('Dashboard');
         }
+    }
+    public function class(){
+        return View('admin.adminclass');
+    }
+    public function subject(){
+        return View('admin.adminsubject');
+    }
+    public function teacher(){
+        return View('admin.adminteacher');
+    }
+    public function teaches(){
+        return View('admin.adminteaches');
+    }
+    public function student(){
+        return View('admin.adminstudent');
     }
 
 }

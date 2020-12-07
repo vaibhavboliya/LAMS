@@ -74,6 +74,11 @@ Route::post('/accept','App\Http\Controllers\LeaveController@accept')->name('acce
 Route::post('/reject','App\Http\Controllers\LeaveController@reject')->name('reject')->middleware('verified');
 // ====================================Admin routes===================================
 Route::get('/home/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('home.admin')->middleware('verified');
+Route::get('/home/admin/class', [App\Http\Controllers\AdminController::class, 'class'])->name('admin.class')->middleware('verified');
+Route::get('/home/admin/subject', [App\Http\Controllers\AdminController::class, 'subject'])->name('admin.subject')->middleware('verified');
+Route::get('/home/admin/teacher', [App\Http\Controllers\AdminController::class, 'teacher'])->name('admin.teacher')->middleware('verified');
+Route::get('/home/admin/student', [App\Http\Controllers\AdminController::class, 'student'])->name('admin.student')->middleware('verified');
+Route::get('/home/admin/teaches', [App\Http\Controllers\AdminController::class, 'teaches'])->name('admin.teaches')->middleware('verified');
 Route::get('/admin/user/{email}', [App\Http\Controllers\AdminController::class, 'viewuser'])->name('admin.viewuser')->middleware('verified');
 Route::post('/admin/user/update', [App\Http\Controllers\AdminController::class, 'edituser'])->name('edituser')->middleware('verified');
 Route::get('/admin/user/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteuser'])->name('deleteuser')->middleware('verified');
