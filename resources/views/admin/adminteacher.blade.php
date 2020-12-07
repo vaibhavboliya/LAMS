@@ -25,13 +25,13 @@
         <li>
           <a href="#"><i class="fa fa-building"></i>Class</a>
         </li>
-        <li class="active">
+        <li >
           <a href="#"><i class="fa fa-book"></i>Subject</a>
         </li>
-        <li>
+        <li class="active">
           <a href="#"><i class="fa fa-user"></i>Teachers</a>
         </li>
-        <li>
+        <li >
           <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
         </li>
         <li>
@@ -66,11 +66,37 @@
 
 
 
-      <section id="content-wrapper">
-        <div class="row">
-          
-        </div>
-      </section>
+    <section id="content-wrapper">
+      <div class="row">
+        <div class="container">
+          <h3 style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="title">Manage Teachers</h3>    
+                <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Sr. No.</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    {{-- @for($i=0;$i<count($name);$i++) --}}
+                  <th scope="row">{.i+1}}</th>
+                  <td>{.name[$i]}}</td>
+                  <td>{.email[$i]}}</td>
+                    <td>{.role[$i]}}</td>
+                  <td><a href="/admin/user/{.id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
+                    <td><a href="/admin/user/delete/{.id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                </tr>
+                {{-- @endfor --}}
+              </tbody>
+            </table>
+      </div>
+      </div>
+    </section>
 
     </div>
 

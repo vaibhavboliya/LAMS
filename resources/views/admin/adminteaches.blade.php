@@ -25,13 +25,13 @@
         <li>
           <a href="#"><i class="fa fa-building"></i>Class</a>
         </li>
-        <li class="active">
+        <li >
           <a href="#"><i class="fa fa-book"></i>Subject</a>
         </li>
         <li>
           <a href="#"><i class="fa fa-user"></i>Teachers</a>
         </li>
-        <li>
+        <li class="active">
           <a href="#"><i class="fa fa-id-badge"></i>Alloted Teachers</a>
         </li>
         <li>
@@ -48,14 +48,7 @@
               <span class="navbar-toggler-icon"></span>
           </button>
           <div id="navbarCollapse" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                  <li class="nav-item">
-                    <a active class="nav-link active" href={{route('dashboardredirect')}} >Dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/notexists" class="nav-link">Profile</a>
-                  </li>
-              </ul>
+             
               <ul class="nav navbar-nav ml-auto">
                   <li class="nav-item"><a class="text-decoration-none text-light" href="/logout">Logout</a></li>
               </ul>
@@ -66,11 +59,41 @@
 
 
 
-      <section id="content-wrapper">
-        <div class="row">
-         
-        </div>
-      </section>
+    <section id="content-wrapper">
+      <div class="row">
+        <div class="container">
+          <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
+            <h3 style= "margin:10px 0; padding: 10px:" class="title col-10">Manage Allocated Teachers</h3>
+            <button type="button" class="btn btn-primary col-2">Add </button>
+
+          </div>
+          <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Sr. No.</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    
+                  <th scope="row">{.i+1}}</th>
+                  <td>{.name[$i]}}</td>
+                  <td>{.email[$i]}}</td>
+                    <td>{.role[$i]}}</td>
+                  <td><a href="/admin/user/{.id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
+                    <td><a href="/admin/user/delete/{.id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                </tr>
+               
+              </tbody>
+            </table>
+      </div>
+      </div>
+    </section>
 
     </div>
 

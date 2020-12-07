@@ -43,7 +43,7 @@ class AdminController extends Controller
     }
     public function viewuser(Request $request)
     {
-        if(Auth::user()->is_teacher == 1)
+        if(Auth::user()->is_teacher == 2)
         {
         $id = $request->route('email');
         $sqlQuery = "SELECT * FROM users where id=$id";

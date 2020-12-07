@@ -19,13 +19,13 @@
         <h2>LAMS</h2>
       </div>
       <ul class="sidebar-nav">
-        <li>
+        <li class="active">
           <a href="#"><i class="fa fa-home"></i>Home</a>
         </li>
         <li>
           <a href="#"><i class="fa fa-building"></i>Class</a>
         </li>
-        <li class="active">
+        <li >
           <a href="#"><i class="fa fa-book"></i>Subject</a>
         </li>
         <li>
@@ -69,8 +69,11 @@
       <section id="content-wrapper">
         <div class="row">
           <div class="container">
-            <h1 class="title">Manage Users</h1>
-            <table class="table table-striped">
+            <div>
+              <h3 style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="title">Manage Users </h3>
+
+            </div>
+            <table class="table table-striped table-hover">
                 <thead>
                   <tr>
                     <th scope="col">Sr. No.</th>

@@ -68,7 +68,7 @@
 
 
 
-      <section  id="content-wrapper">
+      {{-- <section  id="content-wrapper">
         <div class="row justify-content-center">
           
           <div style="margin-top: 5%; padding: 10px 20px; border: 1px solid rgba(231, 161, 9, 0.5); background-color:white" class="col-12 col-md-8 col-lg-8 col-xl-6">
@@ -132,6 +132,43 @@
         
 
    
+      </section> --}}
+      <section id="content-wrapper">
+        <div class="row">
+          <div class="container">
+            <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
+              <h3 style= "margin:10px 0; padding: 10px:" class="title col-10">Manage Subjects</h3>
+              <button type="button" class="btn btn-primary col-2">Add Subject</button>
+
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Subject Name</th>
+                    <th scope="col">year</th>
+                      <th scope="col">Department</th>
+                      <th scope="col">Semester</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      {{-- @for($i=0;$i<count($name);$i++) --}}
+                    <th scope="row">{.i+1}}</th>
+                    <td>{.name[$i]}}</td>
+                    <td>{.email[$i]}}</td>
+                      <td>{.role[$i]}}</td>
+                      <td>{.role[$i]}}</td>
+                    <td><a href="/admin/user/{.id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
+                      <td><a href="/admin/user/delete/{.id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                  </tr>
+                  {{-- @endfor --}}
+                </tbody>
+              </table>
+        </div>
+        </div>
       </section>
 
     </div>
