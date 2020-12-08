@@ -29,7 +29,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile" />
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,14 +245,7 @@
       <workItem from="1607357624799" duration="3319000" />
       <workItem from="1607371877697" duration="737000" />
       <workItem from="1607386389994" duration="2127000" />
-      <workItem from="1607388551507" duration="3583000" />
-    </task>
-    <task id="LOCAL-00001" summary="updated">
-      <created>1606331265423</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1606331265423</updated>
+      <workItem from="1607388551507" duration="4227000" />
     </task>
     <task id="LOCAL-00002" summary="update 2">
       <created>1606333002616</created>
@@ -587,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607392158391</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="final routes checked">
+      <created>1607392340627</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1607392340629</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Images dynamic" />
     <MESSAGE value="Minor Tweeks" />
     <MESSAGE value="Teacherside program" />
     <MESSAGE value="Teacher Dynamic" />
@@ -644,7 +646,8 @@
     <MESSAGE value="Subject Admin COntroller" />
     <MESSAGE value="Admin Last Changes" />
     <MESSAGE value="Admin Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin Controller" />
+    <MESSAGE value="final routes checked" />
+    <option name="LAST_COMMIT_MESSAGE" value="final routes checked" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607353978005">

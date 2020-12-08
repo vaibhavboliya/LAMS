@@ -14,10 +14,25 @@ class Regcontrol extends Controller
         $this->middleware('auth');
         $this->middleware('revalidate');
     }
+    public function regshow()
+    {
+        if (Auth::user()->is_teacher == 0 && Auth::user()->is_registered == 0)
+        {
+            return View('student_registeration');
+        }
+        elseif (Auth::user()->is_teacher == 1) {
+            return redirect()->route('TeacherDashboard');
+        }
+        else {
+            return redirect()->route('home.admin');
+        }
+
+    }
 
     public function reg(Request $req)
     {
-        if (Auth::user()->is_teacher == 0) {
+        if (Auth::user()->is_teacher == 0 && Auth::user()->is_registered == 0)
+        {
             $enrollmentNumber = $req->EnrollmentNumber;
             $firstName = $req->firstName;
             $middleName = $req->middleName;

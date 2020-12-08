@@ -1528,17 +1528,22 @@ teaches_id</ColNames>
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="433" parent="335" name="users_email_unique">
+    <column id="433" parent="335" name="is_registered">
+      <Position>10</Position>
+      <DataType>int unsigned|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="434" parent="335" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="434" parent="335" name="PRIMARY">
+    <key id="435" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="435" parent="335" name="users_email_unique">
+    <key id="436" parent="335" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
