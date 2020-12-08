@@ -49,6 +49,7 @@ class Regcontrol extends Controller
             foreach ( $class_id as $class )
                 $class_id = $class->class_id;
             DB::insert('insert into student values(?,?,?,?,?,?,?,?,?,?,?)', array($enrollmentNumber, $rollNo, $firstName, $middleName, $lastName, $email1, $studentPhone, $parentPhone, $semester, $dept, $class_id));
+            DB::update('update users set is_registered = 1 where email = ?',array(Auth::user()->email));
             return redirect()->route('logout');
         } elseif (Auth::user()->is_teacher == 1) {
             return redirect()->route('TeacherDashboard');

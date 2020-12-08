@@ -29,9 +29,7 @@ class HomeController extends Controller
     {
         if(Auth::user()->is_teacher == 0)
         {
-            $email = Auth::user()->email;
-            $count = DB::table('student')->where('Email', '=', $email)->get()->count();
-            if ($count == 0) {
+            if (Auth::user()->is_registered == 0) {
                 return redirect()->route('StudentRegisteration');
             } else {
                 return redirect()->route('welcome');
