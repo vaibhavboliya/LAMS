@@ -30,9 +30,6 @@
               <li  class="active">
                   <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
               </li>
-              <li>
-                  <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-              </li>
           </ul>
       </aside>
       <div id="navbar-wrapper">
