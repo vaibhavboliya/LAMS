@@ -985,6 +985,7 @@ teaches_id</ColNames>
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="280" parent="210" name="subject_name">
       <Position>2</Position>
@@ -1136,7 +1137,7 @@ teaches_id</ColNames>
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="311" parent="213" name="is_register">
+    <column id="311" parent="213" name="is_registered">
       <Position>10</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>

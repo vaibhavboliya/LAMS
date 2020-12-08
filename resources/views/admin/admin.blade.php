@@ -28,6 +28,9 @@
         <li >
           <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
         </li>
+          <li>
+              <a href={{route('admin.teaches')}}><i class="fa fa-book"></i>Teacher Allocation</a>
+          </li>
       </ul>
     </aside>
     <div id="navbar-wrapper">

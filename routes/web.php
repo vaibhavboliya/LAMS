@@ -87,4 +87,5 @@ Route::get('/Dashboard', function () {
     Route::post('/home/admin/insertsubject',[App\Http\Controllers\AdminController::class, 'insertsubject'])->name('admin.insertsubject')->middleware('verified');
     Route::post('/home/admin/updatesubject',[App\Http\Controllers\AdminController::class, 'updatesubject'])->name('admin.updatesubject')->middleware('verified');
     Route::post('/home/admin/updatetablesubject',[App\Http\Controllers\AdminController::class, 'updatetablesubject'])->name('admin.updatetablesubject')->middleware('verified');
+    Route::get('/home/admin/teaches',[App\Http\Controllers\AdminController::class, 'teaches'])->name('admin.teaches')->middleware('verified');
 

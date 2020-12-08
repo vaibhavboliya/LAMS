@@ -384,6 +384,13 @@ else
             return redirect()->route('Dashboard');
         }
     }
+
+
+//    Teaches Admin Controller
+public function teaches()
+{
+    return View('admin.adminteaches');
+}
 }
 
 
