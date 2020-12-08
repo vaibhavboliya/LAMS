@@ -29,11 +29,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +242,7 @@
       <workItem from="1607357624799" duration="3319000" />
       <workItem from="1607371877697" duration="737000" />
       <workItem from="1607386389994" duration="2127000" />
-      <workItem from="1607388551507" duration="2942000" />
+      <workItem from="1607388551507" duration="3583000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1606331265423</created>
@@ -577,7 +573,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607390546630</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Admin Last Changes">
+      <created>1607392040996</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1607392040996</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Admin Controller">
+      <created>1607392158391</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1607392158391</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,8 +619,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Student dashboard" />
-    <MESSAGE value="Refresh Flaw resolved" />
     <MESSAGE value="Images dynamic" />
     <MESSAGE value="Minor Tweeks" />
     <MESSAGE value="Teacherside program" />
@@ -634,7 +642,9 @@
     <MESSAGE value="Class CRED operations Admin side programmed." />
     <MESSAGE value="COmmit" />
     <MESSAGE value="Subject Admin COntroller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Subject Admin COntroller" />
+    <MESSAGE value="Admin Last Changes" />
+    <MESSAGE value="Admin Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Controller" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607353978005">
