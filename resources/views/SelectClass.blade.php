@@ -10,7 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"> var ok;</script>
     <link rel="stylesheet" href ="/css/teachdb.css">
-    <title>Teachers Dashboard</title>
+    <title>LAMS</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 <div>

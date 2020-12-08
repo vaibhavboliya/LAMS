@@ -8,7 +8,8 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="C3E3lEwI55vDUQApvDuUORaGWKcjcNyfNiiCM5Jg">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Registeration Form</title>
+    <title>LAMS</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/registeration.css">
