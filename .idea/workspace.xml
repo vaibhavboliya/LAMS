@@ -30,13 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="teaches tables">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/addteaches.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/selectsubject.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/selectteacher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,14 +248,7 @@
       <workItem from="1607388551507" duration="5181000" />
       <workItem from="1607393928623" duration="545000" />
       <workItem from="1607401535650" duration="2257000" />
-      <workItem from="1607410005601" duration="10403000" />
-    </task>
-    <task id="LOCAL-00008" summary="Images dynamic">
-      <created>1607025826405</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1607025826405</updated>
+      <workItem from="1607410005601" duration="10936000" />
     </task>
     <task id="LOCAL-00009" summary="Images dynamic">
       <created>1607028214654</created>
@@ -599,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607413134152</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="teaches tables">
+      <created>1607420702177</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1607420702178</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -705,10 +699,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607413139281">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607420774398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607413139281" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607420774398" />
     <state x="566" y="222" width="403" height="376" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1607410240831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
