@@ -27,7 +27,7 @@
     </nav>
 </div>
 <div class="centerbox">
-    <form action={{route('admin.insertsubject')}} method="POST" class="atform">
+    <form action={{route('admin.updatetablesubject')}} method="POST" class="atform">
         @csrf
         <div class="box">
             <div class = "container-fluid ">
@@ -35,24 +35,31 @@
                 <hr>
                 <div class="form-row ">
                     <div class="form-group lecture-date">
+                        <label class= "Class Name">Subject id</label>
+                        <input style="width: 350px" name="subject_id" class="form-control" readonly value={{$subject_id}}>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row ">
+                    <div class="form-group lecture-date">
                         <label class= "Class Name">Subject Name</label>
-                        <input style="width: 350px" name="name" class="form-control">
+                        <input style="width: 350px" name="subject_name" class="form-control" value="{{$name}}">
                     </div>
                 </div>
                 <hr>
                 <div class="form-group lecture-date">
                     <label class= "lecture">Year</label>
-                    <input style="width: 350px" type="number" name="year" class="form-control">
+                    <input style="width: 350px" type="number" name="year" class="form-control" value={{$year}}>
                 </div>
                 <hr>
                 <div class="form-group lecture-date">
                     <label class= "lecture">Department</label>
-                    <input style="width: 350px" type="text" name="Department" class="form-control">
+                    <input style="width: 350px" type="text" name="Department" class="form-control" value={{$department}}>
                 </div>
                 <hr>
                 <div class="form-group lecture-date">
                     <label class= "lecture">Semester</label>
-                    <input style="width: 350px" type="number" name="semester" class="form-control">
+                    <input style="width: 350px" type="number" name="semester" class="form-control" value={{$semester}}>
                 </div>
                 <hr>
                 <div class="col-md-auto">

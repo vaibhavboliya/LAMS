@@ -28,14 +28,8 @@
             <li  >
                 <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
             </li>
-            <li >
-                <a href={{route('admin.teacher')}}><i class="fa fa-user"></i>Teachers</a>
-            </li>
             <li class="active">
                 <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-            </li>
-            <li>
-                <a href={{route('admin.student')}}><i class="fa fa-users"></i>Student</a>
             </li>
         </ul>
     </aside>
@@ -63,7 +57,7 @@
       <div class="row">
         <div class="container">
           <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
-            <h3 style= "margin:10px 0; padding: 10px:" class="title col-10">Manage Allocated Teachers</h3>
+            <h3 style= "margin:10px 0; padding: 10px;" class="title col-10">Manage Allocated Teachers</h3>
             <button type="button" class="btn btn-primary col-2">Add </button>
 
           </div>

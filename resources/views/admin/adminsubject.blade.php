@@ -30,14 +30,8 @@
               <li  class="active">
                   <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
               </li>
-              <li >
-                  <a href={{route('admin.teacher')}}><i class="fa fa-user"></i>Teachers</a>
-              </li>
               <li>
                   <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-              </li>
-              <li>
-                  <a href={{route('admin.student')}}><i class="fa fa-users"></i>Student</a>
               </li>
           </ul>
       </aside>
@@ -121,21 +115,20 @@
           </form>
           </div>
         </div>
-
-
-
       </section> --}}
       <section id="content-wrapper">
         <div class="row">
           <div class="container">
             <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
               <h3 style= "margin:10px 0; padding: 10px;" class="title col-10">Manage Subjects</h3>
-           </div>
+                <a href={{route('admin.addsubject')}}><button type="submit" class="btn btn-primary">Add Class</button></a>
+            </div>
             <table class="table table-striped table-hover">
                 <thead>
                   <tr>
                     <th scope="col">Sr. No.</th>
-                    <th scope="col">Subject Name</th>
+                      <th scope="col">Subject id</th>
+                      <th scope="col">Subject Name</th>
                     <th scope="col">year</th>
                       <th scope="col">Department</th>
                       <th scope="col">Semester</th>
@@ -152,6 +145,11 @@
                     <td>{{$year[$i]}}</td>
                       <td>{{$department[$i]}}</td>
                       <td>{{$semester[$i]}}</td>
+                          <form method="POST" action={{route('admin.updatesubject')}}>
+                              @csrf
+                              <input  type="text" hidden   readonly name="subject_id" value={{$subject_id[$i]}} >
+                              <td><button type="submit" class="btn btn-success text-white">Update</button></td>
+                          </form>
                           <form method="POST" action={{route('admin.deletesubject')}}>
                               @csrf
                               <input value={{$subject_id[$i]}} type="text" name="subject_id" hidden readonly >
@@ -164,10 +162,7 @@
         </div>
         </div>
       </section>
-
     </div>
-
-
     <script>
       const $button  = document.querySelector('#sidebar-toggle');
 const $wrapper = document.querySelector('#wrapper');

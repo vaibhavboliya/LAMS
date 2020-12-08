@@ -88,3 +88,8 @@ Route::get('/Dashboard', function () {
     Route::post('/home/admin/insertclass',[App\Http\Controllers\AdminController::class, 'insertclass'])->name('admin.insertclass')->middleware('verified');
     Route::post('/home/admin/updatetableclass',[App\Http\Controllers\AdminController::class, 'updatetableclass'])->name('admin.updatetableclass')->middleware('verified');
     Route::post('/home/admin/deletesubject',[App\Http\Controllers\AdminController::class, 'deletesubject'])->name('admin.deletesubject')->middleware('verified');
+    Route::get('/home/admin/addsubject',[App\Http\Controllers\AdminController::class, 'addsubject'])->name('admin.addsubject')->middleware('verified');
+    Route::post('/home/admin/insertsubject',[App\Http\Controllers\AdminController::class, 'insertsubject'])->name('admin.insertsubject')->middleware('verified');
+    Route::post('/home/admin/updatesubject',[App\Http\Controllers\AdminController::class, 'updatesubject'])->name('admin.updatesubject')->middleware('verified');
+    Route::post('/home/admin/updatetablesubject',[App\Http\Controllers\AdminController::class, 'updatetablesubject'])->name('admin.updatetablesubject')->middleware('verified');
+

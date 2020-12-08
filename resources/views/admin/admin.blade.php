@@ -29,13 +29,7 @@
           <a href={{route('admin.subject')}}><i class="fa fa-book"></i>Subject</a>
         </li>
         <li>
-          <a href={{route('admin.teacher')}}><i class="fa fa-user"></i>Teachers</a>
-        </li>
-        <li>
           <a href={{route('admin.teaches')}}><i class="fa fa-id-badge"></i>Alloted Teachers</a>
-        </li>
-        <li>
-          <a href={{route('admin.student')}}><i class="fa fa-users"></i>Student</a>
         </li>
       </ul>
     </aside>
