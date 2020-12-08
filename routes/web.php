@@ -88,4 +88,8 @@ Route::get('/Dashboard', function () {
     Route::post('/home/admin/updatesubject',[App\Http\Controllers\AdminController::class, 'updatesubject'])->name('admin.updatesubject')->middleware('verified');
     Route::post('/home/admin/updatetablesubject',[App\Http\Controllers\AdminController::class, 'updatetablesubject'])->name('admin.updatetablesubject')->middleware('verified');
     Route::get('/home/admin/teaches',[App\Http\Controllers\AdminController::class, 'teaches'])->name('admin.teaches')->middleware('verified');
-
+    Route::post('/home/admin/deleteteaches',[App\Http\Controllers\AdminController::class, 'deleteteaches'])->name('admin.deleteteaches')->middleware('verified');
+    Route::get('/home/admin/addteaches',[App\Http\Controllers\AdminController::class, 'addteaches'])->name('admin.addteaches')->middleware('verified');
+    Route::post('/home/admin/teachessubject',[App\Http\Controllers\AdminController::class, 'teachessubject'])->name('admin.teachessubject')->middleware('verified');
+    Route::post('/home/admin/teachesteacher',[App\Http\Controllers\AdminController::class, 'teachesteacher'])->name('admin.teachesteacher')->middleware('verified');
+    Route::post('/home/admin/insertteaches',[App\Http\Controllers\AdminController::class, 'teachesinsert'])->name('admin.insertteaches')->middleware('verified');

@@ -32,27 +32,10 @@
             @csrf
             <div class="box">
                 <div class = "container-fluid ">
-                    <h3>Add Class</h3>
-                    <hr>
-                    <div class="form-row ">
-                        <div class="form-group lecture-date">
-                            <label class= "Class Name">Class Name</label>
-                        <input style="width: 350px" name="name" class="form-control">
-                        </div>
-                    </div>
+                    <h3>Allocate Teacher</h3>
                     <hr>
                     <div class="form-group lecture-date">
-                        <label class= "lecture">Year</label>
-                        <input style="width: 350px" type="number" name="year" class="form-control"  min="1" max="4">
-                    </div>
-                    <hr>
-                    <div class="form-group lecture-date">
-                        <label class= "lecture">Capacity</label>
-                        <input style="width: 350px" type="number" name="capacity" class="form-control">
-                    </div>
-                    <hr>
-                    <div class="form-group lecture-date">
-                        <label class= "">Class Teacher</label>
+                        <label class= "">select Class</label>
                         <select class="form-control" style="width: 350px" name="teacher_id">
                             @for($i=0;$i<$count;$i++)
                             <option value={{$id[$i]}}>{{$name[$i]}}</option>

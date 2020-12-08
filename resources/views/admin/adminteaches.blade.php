@@ -56,7 +56,7 @@
             <div class="container">
                 <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
                     <h3 style= "margin:10px 0; padding: 10px;" class="title col-10">Manage Allocated Teacher's</h3>
-                    <a href={{route('admin.addclass')}}><button type="submit" class="btn btn-primary">New Allocation</button></a>
+                    <a href={{route('admin.addteaches')}}><button type="submit" class="btn btn-primary">New Allocation</button></a>
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
@@ -71,20 +71,21 @@
                     </thead>
                     <tbody>
                     <tr>
-{{--                        @for($i=0;$i<$count;$i++)--}}
-{{--                            <th scope="row">{{$i+1}}</th>--}}
-{{--                            <td>{{$subject_id[$i]}}</td>--}}
-{{--                            <td>{{$subject_name[$i]}}</td>--}}
-{{--                            <td>{{$year[$i]}}</td>--}}
-{{--                            <td>{{$department[$i]}}</td>--}}
-{{--                            <td>{{$semester[$i]}}</td>--}}
-{{--                            <form method="POST" action={{route('admin.deleteteaches')}}>--}}
-{{--                                @csrf--}}
-{{--                                <input value="" type="text" name="subject_id" hidden readonly >--}}
-{{--                                <td><button type="submit" class="btn btn-danger text-white">Delete</button></td>--}}
-{{--                            </form>--}}
+                        @if($count!=0)
+                        @for($i=0;$i<$count;$i++)
+                            <th scope="row">{{$i+1}}</th>
+                            <td>{{$teaches_id[$i]}}</td>
+                            <td>{{$teacher_name[$i]}}</td>
+                            <td>{{$subject_name[$i]}}</td>
+                            <td>{{$class_name[$i]}}</td>
+                            <form method="POST" action={{route('admin.deleteteaches')}}>
+                                @csrf
+                                <input value={{$teaches_id[$i]}} type="text" name="teaches_id" hidden readonly >
+                                <td><button type="submit" class="btn btn-danger text-white">Delete</button></td>
+                            </form>
                     </tr>
-{{--                    @endfor--}}
+                    @endfor
+                    @endif
                     </tbody>
                 </table>
             </div>

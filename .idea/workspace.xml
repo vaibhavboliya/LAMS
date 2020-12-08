@@ -29,14 +29,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0cbf893-4232-4141-92f0-3f807929c2b0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0cbf893-4232-4141-92f0-3f807929c2b0.xml" afterDir="false" />
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="teaches tables">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/addteaches.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/selectsubject.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/selectteacher.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminteaches.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,14 +254,7 @@
       <workItem from="1607388551507" duration="5181000" />
       <workItem from="1607393928623" duration="545000" />
       <workItem from="1607401535650" duration="2257000" />
-      <workItem from="1607410005601" duration="3013000" />
-    </task>
-    <task id="LOCAL-00007" summary="Images dynamic">
-      <created>1607025800825</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1607025800825</updated>
+      <workItem from="1607410005601" duration="10403000" />
     </task>
     <task id="LOCAL-00008" summary="Images dynamic">
       <created>1607025826405</created>
@@ -599,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607405326867</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="teaches tables">
+      <created>1607413134150</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1607413134152</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +631,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Admin" />
     <MESSAGE value="Admin controller" />
     <MESSAGE value="Student Dashboard Bug Fix" />
     <MESSAGE value="leave management system" />
@@ -656,7 +655,8 @@
     <MESSAGE value="Final Update before the Presentaion." />
     <MESSAGE value="Database" />
     <MESSAGE value="Student Profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Student Profile" />
+    <MESSAGE value="teaches tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="teaches tables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="706" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607394055411">
@@ -667,10 +667,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1607388224322" />
-    <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog" timestamp="1607299448694">
+    <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog" timestamp="1607413791939">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607299448694" />
+    <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607413791939" />
     <state x="58" y="181" width="1688" height="806" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606376917551" />
     <state x="592" y="217" key="FileChooserDialogImpl" timestamp="1606984707966">
       <screen x="0" y="0" width="1536" height="824" />
@@ -705,22 +705,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607405332940">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607413139281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607405332940" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607413139281" />
     <state x="566" y="222" width="403" height="376" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1607410240831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="222" width="403" height="376" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1607410240831" />
-    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607411168467">
+    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607413450828">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1607411168467" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607411829716">
+    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1607413450828" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607413799539">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607411829716" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607413799539" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1607389188278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

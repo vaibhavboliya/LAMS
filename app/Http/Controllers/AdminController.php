@@ -389,7 +389,118 @@ else
 //    Teaches Admin Controller
 public function teaches()
 {
-    return View('admin.adminteaches');
+    $teaches_id = array();
+    $teacher_id = array();
+    $teacher_name = array();
+    $subject_id = array();
+    $subject_name = array();
+    $class_id = array();
+    $class_name = array();
+    $i = 0;
+    $data = DB::table('teaches')->select('*')->get();
+    foreach ($data as $d)
+    {
+        $teaches_id[$i] = $d->teaches_id;
+        $teacher_id[$i] = $d->teacher_id;
+        $tdata = DB::table('teacher')->select('teacher_name')->where('teacher_id','=',$d->teacher_id)->get();
+        foreach ($tdata as $td)
+        {
+            $teacher_name[$i] = $td->teacher_name;
+        }
+        $subject_id[$i] = $d->subject_id;
+        $sdata = DB::table('subject')->select('subject_name')->where('subject_id','=',$d->subject_id)->get();
+        foreach ($sdata as $sd)
+        {
+            $subject_name[$i] = $sd->subject_name;
+        }
+        $class_id[$i] = $d->class_id;
+        $cdata = DB::table('class')->select('class_name')->where('class_id','=',$d->class_id)->get();
+        foreach ($cdata as $cd)
+        {
+            $class_name[$i] = $cd->class_name;
+        }
+        $i++;
+    }
+    return View('admin.adminteaches')->with('teacher_name',$teacher_name)
+        ->with('class_name',$class_name)
+        ->with('subject_name',$subject_name)
+        ->with('teaches_id',$teaches_id)->with('class_id',$class_id)->with('count',$i)
+        ->with('teacher_id',$teacher_id)->with('subject_id',$subject_id);
+}
+public function deleteteaches(Request $request)
+{
+    $teaches_id = $request->teaches_id;
+    DB::delete('delete from attends where teaches_id = ?',array($teaches_id));
+    Db::delete('delete from teaches where teaches_id = ?',array($teaches_id));
+    return redirect()->route('admin.teaches');
+}
+public function addteaches()
+{
+    $class_id = array();
+    $class_name = array();
+    $data = DB::table('class')->select('*')->get();
+    $i=0;
+    foreach($data as $d)
+    {
+        $class_name[$i] = $d->class_name;
+        $class_id[$i] = $d->class_id;
+        $i++;
+    }
+    return View('admin.addteaches')->with('class_name',$class_name)->with('class_id',$class_id)->with('count',$i);
+}
+public function teachessubject(Request $request)
+{
+    $subject_id = array();
+    $subject_name = array();
+    $i = 0;
+    $class_id = $request->class_id;
+    $data = DB::table('teaches')->select('subject_id')->where('class_id','=',$class_id)->get();
+    foreach ($data as $d)
+    {
+        $subject_id[$i] = $d->subject_id;
+        $i++;
+    }
+    $year = DB::table('class')->select('year')->where('class_id','=',$class_id)->get();
+    foreach($year as $y)
+    {
+        $year = $y->year;
+    }
+    $data = DB::table('subject')->select('*')->where('year','=',$year)->whereNotIn('subject_id',$subject_id)->get();
+    $subject_id = array();
+    $i = 0;
+    foreach ($data as $d)
+    {
+        $subject_id[$i] = $d->subject_id;
+        $subject_name[$i] = $d->subject_name;
+        $i++;
+    }
+    return view('admin.selectsubject')->with('count',$i)->with('class_id',$class_id)
+        ->with('subject_id',$subject_id)->with('subject_name',$subject_name);
+}
+public function teachesteacher(Request $request)
+{
+    $teacher_id = array();
+    $teacher_name = array();
+    $class_id = $request->class_id;
+    $subject_id = $request->subject_id;
+    $data = DB::table('teacher')->select('*')->get();
+    $i = 0;
+    foreach ($data as $d)
+    {
+        $teacher_id[$i] = $d->teacher_id;
+        $teacher_name[$i] = $d->teacher_name;
+        $i++;
+    }
+    return View('admin.selectteacher')->with('count',$i)->with('class_id',$class_id)->with('subject_id',$subject_id)
+        ->with('teacher_id',$teacher_id)->with('teacher_name',$teacher_name);
+}
+public function teachesinsert(Request $request)
+{
+    $teacher_id = $request->teacher_id;
+    $subject_id = $request->subject_id;
+    $class_id = $request->class_id;
+    DB::insert('insert into teaches (teacher_id,subject_id,class_id,roll_no_allowed) values(?,?,?,?)',array($teacher_id,$subject_id,$class_id,"_"));
+    return redirect()->route('admin.teaches');
 }
 }
 
