@@ -42,7 +42,7 @@
                     <hr>
                     <div class="form-group lecture-date">
                         <label class= "lecture">Year</label>
-                        <input style="width: 350px" type="number" name="year" class="form-control">
+                        <input style="width: 350px" type="number" name="year" class="form-control"  min="1" max="4">
                     </div>
                     <hr>
                     <div class="form-group lecture-date">
