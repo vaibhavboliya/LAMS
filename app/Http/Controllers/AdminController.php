@@ -162,10 +162,21 @@ class AdminController extends Controller
     }
     public function addsubject()
     {
-        return View('admin.addsubject');
+        if(Auth::user()->is_teacher == 2) {
+            return View('admin.addsubject');
+        }
+        elseif (Auth::user()->is_teacher == 1)
+            {
+return redirect()->route('TeacherDashboard');
+}
+else
+{
+    return redirect()->route('Dashboard');
+}
     }
     public function insertsubject(Request $request)
     {
+        if(Auth::user()->is_teacher == 2) {
         $name = $request->name;
         $year = $request->year;
         $dept = $request->Department;
@@ -173,23 +184,42 @@ class AdminController extends Controller
         DB::insert('insert into subject (subject_name,year,Department,semester) values(?,?,?,?)',array($name,$year,$dept,$semester));
         return redirect()->route('admin.subject');
     }
+elseif (Auth::user()->is_teacher == 1)
+{
+return redirect()->route('TeacherDashboard');
+}
+else
+{
+    return redirect()->route('Dashboard');
+}
+    }
     public function updatesubject(Request $request)
     {
+        if(Auth::user()->is_teacher == 2) {
         $subject_id = $request->subject_id;
-        $data = DB::table('subject')->select('*')->where('subject_id','=',$subject_id)->get();
-        foreach ($data as $d)
-        {
+        $data = DB::table('subject')->select('*')->where('subject_id', '=', $subject_id)->get();
+        foreach ( $data as $d ) {
             $name = $d->subject_name;
             $year = $d->year;
             $department = $d->Department;
             $semester = $d->semester;
         }
-        return View('admin.updates')->with('subject_id',$subject_id)
-            ->with('name',$name)->with('year',$year)
-            ->with('department',$department)->with('semester',$semester);
+        return View('admin.updates')->with('subject_id', $subject_id)
+            ->with('name', $name)->with('year', $year)
+            ->with('department', $department)->with('semester', $semester);
+    }
+    elseif (Auth::user()->is_teacher == 1)
+    {
+return redirect()->route('TeacherDashboard');
+}
+else
+{
+    return redirect()->route('Dashboard');
+}
     }
     public function updatetablesubject(Request $request)
     {
+        if(Auth::user()->is_teacher == 2) {
         $subject_id = $request->subject_id;
         $name = $request->subject_name;
         $year = $request->year;
@@ -198,6 +228,15 @@ class AdminController extends Controller
         DB::update('update subject set subject_name=?,year=?,Department=?,semester=? where subject_id=?',array($name,$year,$dept,$semester,$subject_id));
         return redirect()->route('admin.subject');
     }
+elseif (Auth::user()->is_teacher == 1)
+{
+return redirect()->route('TeacherDashboard');
+}
+else
+{
+    return redirect()->route('Dashboard');
+}
+}
 
 //    Class Admin Controller
     public function class(){
@@ -341,47 +380,6 @@ class AdminController extends Controller
         return redirect()->route('TeacherDashboard');
     }
     else
-        {
-            return redirect()->route('Dashboard');
-        }
-    }
-
-
-    public function teacher(){
-        if(Auth::user()->is_teacher == 2) {
-            return View('admin.adminteacher');
-        }
-        elseif (Auth::user()->is_teacher == 1)
-        {
-            return redirect()->route('TeacherDashboard');
-        }
-        else
-        {
-            return redirect()->route('Dashboard');
-        }
-    }
-    public function teaches(){
-        if(Auth::user()->is_teacher == 2) {
-            return View('admin.adminteaches');
-        }
-        elseif (Auth::user()->is_teacher == 1)
-        {
-            return redirect()->route('TeacherDashboard');
-        }
-        else
-        {
-            return redirect()->route('Dashboard');
-        }
-    }
-    public function student(){
-        if(Auth::user()->is_teacher == 2) {
-            return View('admin.adminstudent');
-        }
-        elseif (Auth::user()->is_teacher == 1)
-        {
-            return redirect()->route('TeacherDashboard');
-        }
-        else
         {
             return redirect()->route('Dashboard');
         }
