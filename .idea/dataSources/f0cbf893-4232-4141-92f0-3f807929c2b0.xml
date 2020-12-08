@@ -1136,17 +1136,23 @@ teaches_id</ColNames>
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="311" parent="213" name="users_email_unique">
+    <column id="311" parent="213" name="is_register">
+      <Position>10</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="312" parent="213" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="312" parent="213" name="PRIMARY">
+    <key id="313" parent="213" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="313" parent="213" name="users_email_unique">
+    <key id="314" parent="213" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
