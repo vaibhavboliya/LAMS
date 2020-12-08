@@ -29,10 +29,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0cbf893-4232-4141-92f0-3f807929c2b0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0cbf893-4232-4141-92f0-3f807929c2b0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Student Profile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,14 +244,7 @@
       <workItem from="1607386389994" duration="2127000" />
       <workItem from="1607388551507" duration="5181000" />
       <workItem from="1607393928623" duration="545000" />
-      <workItem from="1607401535650" duration="1614000" />
-    </task>
-    <task id="LOCAL-00005" summary="Refresh Flaw resolved">
-      <created>1607024543555</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1607024543555</updated>
+      <workItem from="1607401535650" duration="2235000" />
     </task>
     <task id="LOCAL-00006" summary="Images dynamic">
       <created>1607025185360</created>
@@ -592,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607394454798</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Database">
+      <created>1607405309308</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1607405309308</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +621,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Teacher Dynamic" />
     <MESSAGE value="Admin" />
     <MESSAGE value="Admin controller" />
     <MESSAGE value="Student Dashboard Bug Fix" />
@@ -649,7 +645,8 @@
     <MESSAGE value="final routes checked" />
     <MESSAGE value="Registeration Form Problem solved" />
     <MESSAGE value="Final Update before the Presentaion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Update before the Presentaion." />
+    <MESSAGE value="Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database" />
   </component>
   <component name="WindowStateProjectService">
     <state x="706" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607394055411">
