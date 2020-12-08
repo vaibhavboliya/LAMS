@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/lams_final</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="sql12380808@sql12.freemysqlhosting.net" uuid="f0cbf893-4232-4141-92f0-3f807929c2b0">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12380808</jdbc-url>
+    </data-source>
   </component>
 </project>
