@@ -29,18 +29,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="teaches tables">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/teacher_registeration.blade.php" afterDir="false" />
+    <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="Major bug fix">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0cbf893-4232-4141-92f0-3f807929c2b0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0cbf893-4232-4141-92f0-3f807929c2b0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student_registeration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_registeration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +185,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../mysqldump" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -261,14 +254,9 @@
       <workItem from="1607421316967" duration="13000" />
       <workItem from="1607447567811" duration="678000" />
       <workItem from="1607481404114" duration="11620000" />
-      <workItem from="1607493421655" duration="1224000" />
-    </task>
-    <task id="LOCAL-00010" summary="Minor Tweeks">
-      <created>1607029303944</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1607029303944</updated>
+      <workItem from="1607493421655" duration="1376000" />
+      <workItem from="1607497726353" duration="657000" />
+      <workItem from="1607498865236" duration="2819000" />
     </task>
     <task id="LOCAL-00011" summary="Teacherside program">
       <created>1607112750326</created>
@@ -606,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607421130268</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Major bug fix">
+      <created>1607494675211</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1607494675211</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Admin controller" />
     <MESSAGE value="Student Dashboard Bug Fix" />
     <MESSAGE value="leave management system" />
     <MESSAGE value="routing for login page" />
@@ -663,7 +657,8 @@
     <MESSAGE value="Database" />
     <MESSAGE value="Student Profile" />
     <MESSAGE value="teaches tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="teaches tables" />
+    <MESSAGE value="Major bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major bug fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="706" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607394055411">
@@ -674,15 +669,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1607388224322" />
+    <state x="449" y="167" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1607497835290">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="167" key="DUMP_DIALOG_DIMENSION_KEY/0.0.1536.824@0.0.1536.824" timestamp="1607497835290" />
     <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog" timestamp="1607413791939">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" maximized="true" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607413791939" />
     <state x="58" y="181" width="1688" height="806" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606376917551" />
-    <state x="592" y="217" key="FileChooserDialogImpl" timestamp="1606984707966">
+    <state x="592" y="217" key="FileChooserDialogImpl" timestamp="1607497877375">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="592" y="217" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606984707966" />
+    <state x="592" y="217" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607497877375" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606379614787" />
     <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1607402301420">
       <screen x="0" y="0" width="1536" height="824" />
@@ -712,22 +711,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607421293970">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607494800481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607421293970" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607494800481" />
     <state x="566" y="222" width="403" height="376" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1607410240831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="222" width="403" height="376" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1607410240831" />
-    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607413450828">
+    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607500675098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1607413450828" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607413799539">
+    <state x="612" y="185" width="829" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1607500675098" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607497740905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607413799539" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607497740905" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1607389188278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

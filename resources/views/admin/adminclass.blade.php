@@ -86,11 +86,11 @@
                             <input  type="text" hidden   readonly name="class_id" value={{$class_id[$i]}} >
                             <td><button type="submit" class="btn btn-success text-white">Update</button></td>
                         </form>
-                        <form method="POST" action={{route('admin.deleteclass')}}>
-                            @csrf
-                            <input value={{$class_id[$i]}} type="text" name="class_id" hidden readonly >
-                            <td><button type="submit" class="btn btn-danger text-white">Delete</button></td>
-                        </form>
+{{--                        <form method="POST" action={{route('admin.deleteclass')}}>--}}
+{{--                            @csrf--}}
+{{--                            <input value={{$class_id[$i]}} type="text" name="class_id" hidden readonly >--}}
+{{--                            <td><button type="submit" class="btn btn-danger text-white">Delete</button></td>--}}
+{{--                        </form>--}}
                 </tr>
                  @endfor
               </tbody>

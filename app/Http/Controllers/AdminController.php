@@ -521,7 +521,15 @@ public function teachesteacher(Request $request)
     $teacher_name = array();
     $class_id = $request->class_id;
     $subject_id = $request->subject_id;
-    $data = DB::table('teacher')->select('*')->get();
+    $already_id = array();
+    $already = DB::table('teaches')->select('teacher_id')->where('class_id','=',$class_id)->get();
+    $i = 0;
+    foreach ($already as $a)
+    {
+        $already_id[$i] = $a->teacher_id;
+        $i++;
+    }
+    $data = DB::table('teacher')->select('*')->whereNotIn('teacher_id',$already_id)->get();
     $i = 0;
     foreach ($data as $d)
     {
