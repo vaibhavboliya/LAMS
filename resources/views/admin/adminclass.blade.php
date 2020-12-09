@@ -49,10 +49,6 @@
           </div>
       </nav>
     </div>
-
-
-
-
     <section id="content-wrapper">
       <div class="row">
         <div class="container">

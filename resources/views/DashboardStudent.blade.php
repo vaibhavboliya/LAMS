@@ -110,8 +110,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 datatable">
-                <div class="previous-four-records table-responsive-sm ">
+            <div class="col-sm-3 datatable ">
+                <div style = "" class="previous-four-records scrolldata table-responsive-sm ">
                     @if($values[$i]['total_count'] == 0)
                         <h3 style="margin-top: 3em">{{"Data is not sufficient"}}</h3>
                     @else

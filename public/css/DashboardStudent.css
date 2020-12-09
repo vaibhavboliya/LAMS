@@ -150,3 +150,9 @@ Subject_img {
     transform: translate(-50%, -50%);
     z-index: 3;
 }
+.scrolldata {
+    overflow: scroll;
+    height:245px;
+
+}
+::-webkit-scrollbar {display: none;}

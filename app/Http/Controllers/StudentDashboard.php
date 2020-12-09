@@ -114,7 +114,7 @@ class StudentDashboard extends Controller
             $j = 0;
             foreach ( $teaches as $teach ) {
                 $tdata = array();
-                $data = DB::table('attends')->select('*')->where('teaches_id', '=', $teach)->orderByDesc('date_of_lecture')->take(4)->get();
+                $data = DB::table('attends')->select('*')->where('teaches_id', '=', $teach)->orderByDesc('date_of_lecture')->get();
                 $k = 0;
                 $count = 0;
                 foreach ( $data as $d ) {
