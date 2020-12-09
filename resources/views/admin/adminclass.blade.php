@@ -58,7 +58,7 @@
         <div class="container">
           <div style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="d-flex justify-content-spacebetween">
             <h3  class="title col-10" style= "margin:10px 0; padding: 10px;">Manage Class</h3>
-              <a href={{route('admin.addsubject')}}><button type="submit" class="btn btn-primary">Add Class</button></a>
+              <a href={{route('admin.addclass')}}><button type="submit" class="btn btn-primary">Add Class</button></a>
           </div>
           {{-- <h3 style= "margin:10px 0; padding: 10px;background-color:rgba(255, 255, 0, 0.507);" class="title">Manage Class</h3> --}}
           <table class="table table-striped table-hover">

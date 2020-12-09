@@ -30,7 +30,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398bd192-74c2-449e-aefc-e78e5eb754f6" name="Default Changelist" comment="teaches tables">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/teacher_registeration.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Regcontrol.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/addclass.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminclass.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminsubject.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student_registeration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_registeration.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -248,14 +257,11 @@
       <workItem from="1607388551507" duration="5181000" />
       <workItem from="1607393928623" duration="545000" />
       <workItem from="1607401535650" duration="2257000" />
-      <workItem from="1607410005601" duration="10936000" />
-    </task>
-    <task id="LOCAL-00009" summary="Images dynamic">
-      <created>1607028214654</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1607028214654</updated>
+      <workItem from="1607410005601" duration="11118000" />
+      <workItem from="1607421316967" duration="13000" />
+      <workItem from="1607447567811" duration="678000" />
+      <workItem from="1607481404114" duration="11620000" />
+      <workItem from="1607493421655" duration="1224000" />
     </task>
     <task id="LOCAL-00010" summary="Minor Tweeks">
       <created>1607029303944</created>
@@ -593,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607420702178</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="teaches tables">
+      <created>1607421130268</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1607421130268</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -699,10 +712,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606367939943" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607420774398">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607421293970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607420774398" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607421293970" />
     <state x="566" y="222" width="403" height="376" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1607410240831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

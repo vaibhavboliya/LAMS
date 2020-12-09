@@ -18,7 +18,15 @@ class Regcontrol extends Controller
     {
         if (Auth::user()->is_teacher == 0 && Auth::user()->is_registered == 0)
         {
-            return View('student_registeration');
+            $class_name = array();
+            $i = 0;
+            $class = DB::table('class')->select('class_name')->get();
+            foreach ($class as $c)
+            {
+                $class_name[$i] = $c->class_name;
+                $i++;
+            }
+            return View('student_registeration')->with('class_name',$class_name)->with('count',$i);
         }
         elseif (Auth::user()->is_teacher == 1) {
             return redirect()->route('TeacherDashboard');
@@ -27,6 +35,43 @@ class Regcontrol extends Controller
             return redirect()->route('home.admin');
         }
 
+    }
+    public function teacherreg()
+    {
+        if (Auth::user()->is_teacher == 1 && Auth::user()->is_registered == 0)
+        {
+            return View('admin.teacher_registeration');
+        }
+        elseif (Auth::user()->is_teacher == 1 && Auth::user()->is_registered == 1)
+        {
+            return redirect('TeacherDashboard');
+        }
+        elseif (Auth::user()->is_teacher == 0) {
+            return redirect()->route('Dashboard');
+        }
+        else {
+            return redirect()->route('home.admin');
+        }
+    }
+    public function insertteacher(Request $request)
+    {
+        if (Auth::user()->is_teacher == 1 && Auth::user()->is_registered == 0)
+        {
+            $phone_number = $request->PhoneNumber;
+            DB::insert('insert into teacher (teacher_name,Email,Phone_No_1) value(?,?,?)',array(Auth::user()->name,Auth::user()->email,$phone_number));
+            DB::update('update users set is_registered = 1 where email = ?',array(Auth::user()->email));
+            return redirect()->route('TeacherDashboard');
+        }
+        elseif (Auth::user()->is_teacher == 1 && Auth::user()->is_registered == 1)
+        {
+            return redirect('TeacherDashboard');
+        }
+        elseif (Auth::user()->is_teacher == 0) {
+            return redirect()->route('Dashboard');
+        }
+        else {
+            return redirect()->route('home.admin');
+        }
     }
 
     public function reg(Request $req)

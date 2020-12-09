@@ -110,10 +110,9 @@
                 <label for="class">Select Your Class<span class="text-danger">*</span></label>
                 <select name="className" id="inputState" class="form-control">
                     <option selected value="select class">Select Class</option>
-                    <option value="D2C">D2C</option>
-                    <option value="D7C">D7C</option>
-                    <option value="D12C">D12C</option>
-                    <option value="D17C">D17C</option>
+                    @foreach($class_name as $class)
+                        <option selected value={{$class}}>{{$class}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group col-md-3">

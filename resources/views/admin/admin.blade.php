@@ -78,8 +78,14 @@
                     <td>{{$name[$i]}}</td>
                     <td>{{$email[$i]}}</td>
                       <td>{{$role[$i]}}</td>
+                      @if($role[$i]==0)
                     <td><a href="/admin/user/{{$id[$i]}}" type="button" class="btn btn-success text-white">view</a></td>
-                      <td><a href="/admin/user/delete/{{$id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                     <td><a href="/admin/user/delete/{{$id[$i]}}" type="button" class="btn btn-danger text-white">Delete</a></td>
+                          @else
+                          <td></td>
+                          <td></td>
+                          @endif
+
                   </tr>
                   @endfor
                 </tbody>

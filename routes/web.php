@@ -19,20 +19,7 @@ Route::get('/', function () {
 })->name('welcome');
 Auth::routes(['verify' => true]);
 Route::get('/home', function () {
-    switch(\Illuminate\Support\Facades\Auth::user()->is_teacher){
-        case '0':
-            return redirect(route('home'));
-            break;
-        case '1':
-            return redirect(route('home.teacher'));
-            break;
-        case '2':
-            return redirect(route('home.admin'));
-            break;
-        default:
-            return '/login';
-            break;
-    }
+    return redirect()->route('home');
 });
 Route::get('/Dashboard', function () {
     switch(\Illuminate\Support\Facades\Auth::user()->is_teacher){
@@ -61,15 +48,18 @@ Route::get('/Dashboard', function () {
     Route::post('/leaveformsubmit', 'App\Http\Controllers\LeaveController@leaveformsubmit')->name('leaveformsubmit')->middleware('auth')->middleware('revalidate');;
     Route::post('/deleteleave', 'App\Http\Controllers\LeaveController@deleteleave')->name('deleteleave')->middleware('auth')->middleware('revalidate');;
 // ====================================teacher routes===================================
-    route::get('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'Dashboard'])->name('TeacherDashboard');
-    route::post('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'mark'])->name('mark');
+    Route::get('/TeacherRegistration',[App\Http\Controllers\Regcontrol::class, 'teacherreg'])->name('TeacherRegistration')->middleware('verified');
+    route::get('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'Dashboard'])->name('TeacherDashboard')->middleware('verified');
+    route::post('/TeacherDashboard',[\App\Http\Controllers\TeacherDashboard::class,'mark'])->name('mark')->middleware('verified');
     Route::post('/submitattendance',[\App\Http\Controllers\TeacherDashboard::class,'submitattendance'])->name('submitattendance');
     Route::get('/home/teacher', [App\Http\Controllers\Teacher::class, 'index'])->name('home.teacher')->middleware('verified');
     Route::get('/viewLeave','App\Http\Controllers\LeaveController@viewleave')->name('viewLeave')->middleware('verified');
     Route::post('/viewapplication','App\Http\Controllers\LeaveController@viewapplication')->name('viewApplication')->middleware('verified');
     Route::post('/accept','App\Http\Controllers\LeaveController@accept')->name('accept')->middleware('verified');
     Route::post('/reject','App\Http\Controllers\LeaveController@reject')->name('reject')->middleware('verified');
-// ====================================Admin routes===================================
+    Route::post('/teacherstatus','App\Http\Controllers\Regcontrol@insertteacher')->name('teacherstatus')->middleware('verified');
+
+    // ====================================Admin routes===================================
     Route::get('/home/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('home.admin')->middleware('verified');
     Route::get('/home/admin/class', [App\Http\Controllers\AdminController::class, 'class'])->name('admin.class')->middleware('verified');
     Route::get('/home/admin/subject', [App\Http\Controllers\AdminController::class, 'subject'])->name('admin.subject')->middleware('verified');

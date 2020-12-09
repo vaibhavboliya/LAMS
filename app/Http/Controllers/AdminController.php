@@ -72,12 +72,12 @@ class AdminController extends Controller
     }
     public function edituser(Request $request)
     {
-        if(Auth::user()->is_teacher == 1)
+        if(Auth::user()->is_teacher == 2)
         {
         $email = $request->email;
         $name = $request->name;
         $role = $request->role;
-        DB::update('update users set is_teacher = ? , name = ? where email = ?',array($role,$name,$email));
+        DB::update('update users set is_teacher = ? , name = ?  where email = ?',array($role,$name,$email));
         return redirect()->route('home.admin');
         }
         elseif (Auth::user()->is_teacher == 1)

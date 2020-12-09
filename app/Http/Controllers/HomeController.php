@@ -27,21 +27,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->is_teacher == 0)
+        if(Auth::user()->is_teacher == 0 && Auth::user()->is_registered == 0)
         {
-            if (Auth::user()->is_registered == 0) {
-                return redirect()->route('StudentRegisteration');
-            } else {
-                return redirect()->route('welcome');
-            }
+            return redirect()->route('StudentRegisteration');
         }
-        elseif (Auth::user()->is_teacher == 1)
+        elseif (Auth::user()->is_teacher == 0 && Auth::user()->is_registered == 1)
+        {
+            return redirect()->route('welcome');
+        }
+        elseif (Auth::user()->is_teacher == 1 && Auth::user()->is_registered == 0)
+        {
+            return redirect()->route('TeacherRegistration');
+        }
+        elseif (Auth::user()->is_teacher == 1 && Auth::user()->is_registered == 1)
         {
             return redirect()->route('TeacherDashboard');
         }
-        else
+        elseif(Auth::user()->is_teacher == 2)
         {
             return redirect()->route('home.admin');
         }
+        else
+        {
+            return redirect()->route('logout');
+        }
     }
 }
+
